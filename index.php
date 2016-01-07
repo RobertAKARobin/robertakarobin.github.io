@@ -10,6 +10,7 @@
     <title>Robert (aka Robin) Thomas</title>
     <link id="css" href="css/business.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script src="scripts.js"></script>
   </head>
   <body>
 
@@ -38,30 +39,11 @@
     <main>
       <section>
         <h2>Programming Skill Highlights</h2>
-        <pre>
-.               INAP  MHTML Bot GA  Dot Grumblr Excel   RAKAR
-nginx           x     x     .   .   .   .       .       x
-Git             x     x     x   x   x   x       .       x
-Bash            .     .     .   .   x   .       .       .
-HTML5/CSS3      x     x     .   x   .   x       .       x
-Bootstrap       .     .     .   .   .   x       .       .
-Javascript      x     x     .   x   .   .       .       x
-jQuery          .     .     .   x   .   .       .       .
-RegEx           x     x     x   .   .   .       .       .
-Angular.js      .     .     .   .   .   x       .       .
-Firebase        .     .     .   .   .   x       .       .
-Node.js/Express x     .     x   .   .   .       .       .
-Mocha           .     .     x   .   .   .       .       .
-Ruby            .     x     .   x   .   .       .       .
-Sinatra         .     x     .   .   .   .       .       .
-Rails           .     .     .   x   .   .       .       .
-RSpec           .     .     .   x   .   .       .       .
-PHP             .     .     .   .   .   .       .       x
-Groovy          .     .     .   .   .   .       x       .
-Java            .     .     .   .   .   .       x       .
-SQLite3         .     .     x   .   .   .       .       .
-PostgreSQL      .     .     .   x   .   .       .       .
-        </pre>
+<?php
+include("classes/tablestring.php");
+$table = new TableString(file_get_contents("views/tablestring.txt"));
+echo $table->html;
+?>
         <!-- MongoDB, Visualforce, SOSL, SOQL, Heroku -->
       </section>
 
