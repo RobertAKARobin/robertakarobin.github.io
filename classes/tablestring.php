@@ -52,9 +52,12 @@ class TableString{
 
   private function withHeaders(){
     $table = [];
+    $headers = array("h" => $this->table[0], "v" => []);
     foreach($this->table as $row){
       $table[$row[0]] = $row;
+      $headers["v"][] = $row[0];
     }
+    $this->headers = $headers;
     return $table;
   }
 
