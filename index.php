@@ -10,7 +10,7 @@
     <title>Robert (aka Robin) Thomas</title>
     <link id="css" href="css/business.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <script src="scripts.js"></script>
+    <!-- <script src="scripts.js"></script> -->
   </head>
   <body>
 
@@ -39,7 +39,7 @@
     <main>
       <section>
         <h2>Programming Skill Highlights</h2>
-        <table border="1">
+        <table>
 <?php
 include("classes/tablestring.php");
 $eol = PHP_EOL;
