@@ -54,6 +54,17 @@ class TableString{
     return join(PHP_EOL, $out);
   }
 
+  public function transpose(){
+    $table = [];
+    foreach($this->table as $rIndex => $row){
+      foreach($row as $cIndex => $cell){
+        $table[$cIndex][] = $cell;
+      }
+    }
+    $this->table = $table;
+    $this->html = $this->toHTML();
+  }
+
   public function __construct($source){
     $this->rows  = preg_split("/\n/", $source);
     $this->table = $this->splitToTable();

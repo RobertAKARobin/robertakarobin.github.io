@@ -42,6 +42,7 @@
 <?php
 include("classes/tablestring.php");
 $table = new TableString(file_get_contents("views/tablestring.txt"));
+$table->transpose();
 echo $table->html;
 ?>
         <!-- MongoDB, Visualforce, SOSL, SOQL, Heroku -->
