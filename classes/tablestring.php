@@ -35,22 +35,21 @@ class TableString{
     return $table;
   }
 
-  private function rowToHTML($array){
+  public function rowToHTML($array){
     $out = [];
     foreach($array as $datum){
       if($datum === $this->on) $out[] = "<td class='on'>$this->on</td>";
       else if($datum === $this->off) $out[] = "<td></td>";
-      else $out[] = "<th>$datum</th>";
+      else $out[] = "<th><span>$datum</span></th>";
     }
     return join("", $out);
   }
 
   private function toHTML(){
-    $out = ["<table>"];
+    $out = [];
     foreach($this->table as $row){
       $out[] = "<tr>" . $this->rowToHTML($row) . "</tr>";
     }
-    $out[] = "</table>";
     return join(PHP_EOL, $out);
   }
 
@@ -61,14 +60,39 @@ class TableString{
         $table[$cIndex][] = $cell;
       }
     }
-    $this->table = $table;
-    $this->html = $this->toHTML();
+    return new self($table);
+  }
+
+  private function withHeaders(){
+    $table = [];
+    foreach($this->table as $row){
+      $table[$row[0]] = $row;
+    }
+    return $table;
+  }
+
+  private function fromString($source){
+    $this->rows  = preg_split("/\n/", $source);
+    $this->table = $this->splitToTable();
+    $this->table = $this->withHeaders();
+    $this->html  = $this->toHTML();
+  }
+
+  private function fromArray($source){
+    $this->table = $source;
+    $this->table = $this->withHeaders();
+    $this->html  = $this->toHTML();
   }
 
   public function __construct($source){
-    $this->rows  = preg_split("/\n/", $source);
-    $this->table = $this->splitToTable();
-    $this->html  = $this->toHTML();
+    switch(gettype($source)){
+      case "string":
+        $this->fromString($source);
+        break;
+      case "array":
+        $this->fromArray($source);
+        break;
+    }
   }
 
 }

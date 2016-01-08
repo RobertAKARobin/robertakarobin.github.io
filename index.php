@@ -39,12 +39,14 @@
     <main>
       <section>
         <h2>Programming Skill Highlights</h2>
+        <table border="1">
 <?php
 include("classes/tablestring.php");
 $table = new TableString(file_get_contents("views/tablestring.txt"));
-$table->transpose();
+$table = $table->transpose();
 echo $table->html;
 ?>
+        </table>
         <!-- MongoDB, Visualforce, SOSL, SOQL, Heroku -->
       </section>
 
