@@ -5,6 +5,7 @@ class TableString{
   public $table;
   public $headers;
   public $html;
+  public $numCols;
   private $on = "x";
   private $off = ".";
 
@@ -32,6 +33,11 @@ class TableString{
     return join("", $out);
   }
 
+  public function rowHTMLByHeader($header){
+    $row = $this->table[$header];
+    return $this->rowToHTML(array_slice($row, 1));
+  }
+
   private function toHTML(){
     $out = [];
     foreach($this->table as $row){
@@ -52,11 +58,13 @@ class TableString{
 
   private function withHeaders(){
     $table = [];
-    $headers = array("h" => $this->table[0], "v" => []);
+    $headers = array("h" => [], "v" => []);
+    $headers["h"] = array_slice($this->table[0], 1);
     foreach($this->table as $row){
       $table[$row[0]] = $row;
       $headers["v"][] = $row[0];
     }
+    $this->numCols = count($headers["h"]);
     $this->headers = $headers;
     return $table;
   }

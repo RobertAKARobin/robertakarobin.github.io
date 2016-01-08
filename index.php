@@ -41,15 +41,22 @@
         <h2>Programming Skill Highlights</h2>
         <table border="1">
 <?php
+include("classes/tablestring.php");
+$eol = PHP_EOL;
+
 $portfolio = [];
 $portfolio["INAP"] = <<<HTML
-  <p>I like turtles.</p>
+<h3>INeedAPrompt</h3>
+<p>This is some content.</p>
 HTML;
-include("classes/tablestring.php");
-$table = new TableString(file_get_contents("views/tablestring.txt"));
-$table = $table->transpose();
-echo $table->rowToHTML($table->table["."]);
 
+$table = (new TableString(file_get_contents("views/tablestring.txt")))->transpose();
+echo "<thead><tr>" . $table->rowToHTML($table->headers["h"]) . "</tr></thead>$eol";
+foreach($portfolio as $header => $html){
+  $tds = $table->rowHTMLByHeader($header);
+  echo "<tr><td colspan='$table->numCols'>$html</td></tr>$eol";
+  echo "<tr>$tds</tr>$eol";
+}
 ?>
         </table>
         <!-- MongoDB, Visualforce, SOSL, SOQL, Heroku -->
