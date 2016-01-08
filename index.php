@@ -41,10 +41,15 @@
         <h2>Programming Skill Highlights</h2>
         <table border="1">
 <?php
+$portfolio = [];
+$portfolio["INAP"] = <<<HTML
+  <p>I like turtles.</p>
+HTML;
 include("classes/tablestring.php");
 $table = new TableString(file_get_contents("views/tablestring.txt"));
 $table = $table->transpose();
-echo $table->html;
+echo $table->rowToHTML($table->table["."]);
+
 ?>
         </table>
         <!-- MongoDB, Visualforce, SOSL, SOQL, Heroku -->

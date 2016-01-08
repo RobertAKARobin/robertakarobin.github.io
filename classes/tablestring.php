@@ -4,7 +4,6 @@ class TableString{
   private $rows;
   public $table;
   public $headers;
-  public $numCols;
   public $html;
   private $on = "x";
   private $off = ".";
@@ -13,24 +12,12 @@ class TableString{
     die("<pre>$message</pre>");
   }
 
-  private function matchesNumCols($array){
-    $length = count($array);
-    if(!$this->numCols){
-      $this->numCols = $length;
-      $this->headers = $array;
-      return $array;
-    }else if($this->numCols !== $length){
-      $this->err("Expected $this->numCols columns, but got $length:\n" . join(" ", $array));
-    }else return $array;
-  }
-
   private function splitToTable(){
     $table = [];
     foreach($this->rows as $row){
       $row = trim($row);
       if($row === "") continue;
-      $row = preg_split("/\s+/", $row);
-      $table[] = $this->matchesNumCols($row);
+      $table[] = preg_split("/\s+/", $row);
     }
     return $table;
   }
