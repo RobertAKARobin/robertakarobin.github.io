@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- <?php
+<?php
   if($_SERVER["SERVER_NAME"] == "localhost") $offline = true;
-?> -->
+?>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -43,20 +43,29 @@
 <?php
 include("classes/tablestring.php");
 $eol = PHP_EOL;
-
 $portfolio = [];
+
 $portfolio["INAP"] = <<<HTML
-<h3>INeedAPrompt</h3>
-<p>This is some content.</p>
+  <header>
+    <h3>INeedAPrompt</h3>
+    <p><a href="#">Maybe a link</a></p>
+  </header>
+  <p>This is some content.</p>
+HTML;
+$portfolio["MHTML"] = <<<HTML
+  <h3>Magnetic HTML</h3>
+  <p>Design a </p>
 HTML;
 
 $table = (new TableString(file_get_contents("views/tablestring.txt")))->transpose();
-echo "<thead><tr>" . $table->rowToHTML($table->headers["h"]) . "</tr></thead>$eol";
+$headers = $table->rowToHTML($table->headers["h"]);
+echo "<thead><tr>$headers</tr></thead>$eol";
 foreach($portfolio as $header => $html){
   $tds = $table->rowHTMLByHeader($header);
   echo "<tr><td colspan='$table->numCols'>$html</td></tr>$eol";
   echo "<tr>$tds</tr>$eol";
 }
+echo "<tfoot><tr>$headers</tr></tfoot>$eol";
 ?>
         </table>
         <!-- MongoDB, Visualforce, SOSL, SOQL, Heroku -->
