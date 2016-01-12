@@ -17,26 +17,16 @@ body{
   font-size: 14px;
   line-height: 24px;
   margin:0 auto;
-  max-width:800px;
   text-align:center;
-}
-h3, li, section p{
-  text-align:left;
 }
 div, section, header, li{
   position:relative;
 }
 a{
-  color:#369;
   cursor:pointer;
-  text-decoration:underline;
-}
-a:hover{
-  color:#69c;
 }
 
-header
-{
+header{
   font-family: "Futura","Arial Rounded MT Bold","Helvetica Rounded",Arial,sans-serif;
 }
 body, aside{
@@ -44,40 +34,27 @@ body, aside{
 }
 h1{
   font-size:42px;
-  line-height:64px;
+  line-height:42px;
 }
 h1 sup{
   vertical-align:middle;
   font-size:1rem;
-  color:#999;
 }
 h3{
   text-decoration:underline;
 }
-aside{
-  position:absolute;
-  top:0;
-  right:0;
-}
-aside,
-aside p,
-aside li{
-  text-align:right;
-}
 address{
   font-style:normal;
+  position:relative;
 }
 section, footer{
-  border-top:1px dotted #000;
+  border-top:1px solid #000;
 }
-h1+p, h2{
-  margin-bottom:1rem;
-}
-h3{
-  margin-top:1rem;
+body>section{
+  border-top:none;
 }
 section{
-  padding:1rem 0;
+  padding-bottom:1rem;
 }
 
 .il,
@@ -89,4 +66,96 @@ section{
 }
 .il li:last-of-type:before{
   content:"and ";
+}
+
+@media screen{
+  body{
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:2rem;
+  }
+  h1{
+    text-shadow:0 0 1px #bbb;
+  }
+  h1 sup{
+    color:#999;
+  }
+  a{
+    text-decoration:underline;
+    color:#369;
+  }
+  a:hover{
+    color:#69c;
+  }
+}
+@media all and (min-width:501px){
+  h3, li, section p{
+    text-align:left;
+  }
+  h1+p{
+    text-align:center;
+  }
+  aside,
+  address p+p{
+    position:absolute;
+    top:0;
+    right:0;
+  }
+  aside,
+  aside p,
+  aside li,
+  address p+p{
+    text-align:right;
+  }
+  ol>li:not(:last-of-type){
+    margin-bottom:1rem;
+  }
+}
+
+@media screen and (min-width:501px){
+  footer>p,
+  h1+p,
+  h2{
+    margin:1rem auto;
+  }
+  body{
+    max-width:800px;
+    padding-bottom:2rem;
+  }
+}
+
+@media screen and (max-width:500px){
+  h1 sup{
+    display:block;
+    line-height:18px;
+  }
+  address{
+    margin-top:1rem;
+  }
+  footer>p,
+  h1+p,
+  h2{
+    margin:2rem auto;
+  }
+  aside{
+    font-style:italic;
+  }
+  h2{
+    text-transform:uppercase;
+  }
+  ol>li{
+    margin-bottom:2rem;
+  }
+}
+
+@media print{
+  h1{
+    text-shadow:none;
+  }
+  a{
+    text-decoration: none;
+  }
+  .np{
+    display:none;
+  }
 }

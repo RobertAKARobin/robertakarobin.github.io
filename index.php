@@ -19,110 +19,32 @@
   </head>
   <body>
 
-    <header>
-      <h1>Robert <sup>(aka Robin)</sup> Thomas</h1>
-      <p>Web Development and Customer Experience</p>
-    </header>
-
     <section>
-      <h2 class="il">RobertAKARobin on</h2>
-      <ul class="il">
-        <li><a href="https://github.com/robertakarobin">GitHub</a></li>
-        <li><a href="http://www.linkedin.com/in/robertakarobin">LinkedIn</a></li>
-        <li><a href="https://www.facebook.com/robertakarobin">Facebook</a></li>
-        <li><a href="http://www.reddit.com/user/robertgfthomas">Reddit</a></li>
-        <li><a href="https://twitter.com/robertakarobin">Twitter</a></li>
-      </ul>
-      <div>
-        <address>
-          <p><a href="mailto:hello@robertakarobin.com">contact@robertakarobin.com</a>
-          <!-- Phone --><?php if($localhost) echo("<br/>" . $contact["phone"]); ?></p>
-        </address>
-        <aside>
-          <address>
-            <p><!-- Street --><?php if($localhost) echo($contact["street"] . "<br/>"); ?>
-            Bethesda, MD 20815</p>
-          </address>
-        </aside>
+      <header>
+        <h1>Robert <sup>(aka Robin)</sup> Thomas</h1>
+        <p>Full-Stack Web Development and Customer Experience</p>
+      </header>
+      <div class="np">
+        <p class="il">RobertAKARobin on</p>
+        <ul class="il">
+          <li><a href="https://github.com/robertakarobin">GitHub</a></li>
+          <li><a href="http://www.linkedin.com/in/robertakarobin">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com/robertakarobin">Facebook</a></li>
+          <li><a href="http://www.reddit.com/user/robertgfthomas">Reddit</a></li>
+          <li><a href="https://twitter.com/robertakarobin">Twitter</a></li>
+        </ul>
       </div>
+      <address>
+        <p><a href="mailto:hello@robertakarobin.com">contact@RobertAKARobin.com</a>
+        <!-- Phone --><?php if($localhost) echo("<br/>" . $contact["phone"]); ?></p>
+        <p><!-- Street --><?php if($localhost) echo($contact["street"] . "<br/>"); ?>
+        Bethesda, MD 20815</p>
+      </address>
     </section>
 
     <main>
       <section>
-        <header>
-          <h2>Programming Portfolio Highlights</h2>
-          <aside>github.com/</aside>
-        </header>
-        <ol>
-          <li>
-            <header>
-              <h3><a href="http://garnet.wdidc.org">GArnet.wdidc.org</a></h3>
-              <ul class="il">
-                <li>Ruby</li>
-                <li>Rails</li>
-                <li>Javascript</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>jQuery</li>
-                <li>PostgreSQL</li>
-              </ul>
-              <aside>ga-dc/<a href="http://github.com/ga-dc/garnet">garnet</a></aside>
-            </header>
-            <p>An open-source assignment and attendance tracking app for General Assembly.</p>
-          </li>
-          <li>
-            <header>
-              <h3><a href="http://www.magnetichtml.com">MagneticHTML.com</a></h3>
-              <ul class="il">
-                <li>Ruby</li>
-                <li>Sinatra</li>
-                <li>Javascript</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>PHP</li>
-              </ul>
-              <aside>
-                <ul>
-                  <li>robertakarobin/<a href="http://github.com/robertakarobin/mhtml-sinatra">mhtml-sinatra</a></li>
-                  <li>robertakarobin/<a href="http://github.com/robertakarobin/magnetichtml">magnetichtml</a></li>
-                </ul>
-              </aside>
-            </header>
-            <p>Stick the Internet to your fridge! Design a webpage using magnetic tiles.</p>
-          </li>
-          <li>
-            <header>
-              <h3>AnonBot</h3>
-              <ul class="il">
-                <li>Javascript</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>Websockets</li>
-                <li>SQLite3</li>
-              </ul>
-              <aside>wdidc/<a href="http://github.com/wdidc/wdi_bot">wdi_bot</a></aside>
-            </header>
-            <p>A <a href="http://slack.com">Slack</a> service that allows students to post anonymous questions during class.</p>
-          </li>
-          <li>
-            <header>
-              <h3><a href="http://ineedaprompt.com">INeedAPrompt.com</a></h3>
-              <ul class="il">
-                <li>Javascript</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-              </ul>
-              <aside>robertakarobin/<a href="http://github.com/robertakarobin/inap-node">inap-node</a></aside>
-            </header>
-            <p><?php echo number_format($inap_count); ?> prompts generated so far!</p>
-          </li>
-        </ol>
-      </section>
-
-      <section>
-        <header><h2>Recent Work History</h2></header>
+        <header><h2>Recent Employment History</h2></header>
         <ol>
           <li>
             <header>
@@ -172,21 +94,89 @@
       </section>
 
       <section>
+        <header>
+          <h2>Development Portfolio Highlights</h2>
+        </header>
+        <ol>
+          <li>
+            <header>
+              <h3><a href="http://ineedaprompt.com">INeedAPrompt.com</a></h3>
+              <p><?php echo number_format($inap_count); ?> prompts generated so far!</p>
+            </header>
+            <ul class="il">
+              <li>Javascript</li>
+              <li>Node.js</li>
+              <li>Express.js</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+            </ul>
+          </li>
+          <li>
+            <header>
+              <h3><a href="http://www.magnetichtml.com">MagneticHTML.com</a></h3>
+              <p>Stick the Internet to your fridge.</p>
+            </header>
+            <ul class="il">
+              <li>Ruby</li>
+              <li>Sinatra</li>
+              <li>PHP</li>
+              <li>Javascript</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+            </ul>
+          </li>
+          <li>
+            <header>
+              <h3><a href="http://garnet.wdidc.org">GArnet.wdidc.org</a></h3>
+              <p>Open-source assignment and attendance tracking.</p>
+            </header>
+            <ul class="il">
+              <li>Ruby</li>
+              <li>Rails</li>
+              <li>Javascript</li>
+              <li>jQuery</li>
+              <li>PostgreSQL</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+            </ul>
+          </li>
+          <li>
+            <header>
+              <h3>Other Technologies</h3>
+            </header>
+            <ul class="il">
+              <li>Git CLI</li>
+              <li>nginx</li>
+              <li>AngularJS</li>
+              <li>MongoDB</li>
+              <li>SQLite</li>
+              <li>Groovy</li>
+              <li>RegEx</li>
+              <li>Mocha</li>
+              <li>RSpec</li>
+              <li>SOSL/SOQL</li>
+              <li>Visualforce</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+
+      <section class="np">
         <header><h2>Education</h2></header>
-        <ul>
+        <ol>
           <li>
             <header>
               <h3>Stanford University</h3>
               <p>B.A. Urban Studies</p>
             </header>
-            <p>Completed 137 credits with a 3.732 GPA. Left to found TheNoteboard.com</p>
+            <p>Completed 137 credits with a 3.7 GPA. Left to found TheNoteboard.com</p>
           </li>
-        </ul>
+        </ol>
       </section>
     </main>
 
     <footer>
-      <p>This r&eacute;sum&eacute; was coded from scratch in HTML5/CSS3.</p>
+      <p>This r&eacute;sum&eacute; was coded from scratch in HTML5 and CSS3.</p>
     </footer>
 
   </body>
