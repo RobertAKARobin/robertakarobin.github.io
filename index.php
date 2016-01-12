@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <?php
-  if($_SERVER["SERVER_NAME"] == "localhost") $offline = true;
+  if($_SERVER["SERVER_NAME"] == "localhost"){
+    $localhost = true;
+    $contact = json_decode(file_get_contents("contact.json"), true);
+  }
+  $inap_url = "http://ineedaprompt.com/count";
+  $inap_count = json_decode(file_get_contents($inap_url), true)["count"];
 ?>
 <html>
   <head>
@@ -14,75 +19,120 @@
   </head>
   <body>
 
+    <header>
+      <h1>Robert <sup>(aka Robin)</sup> Thomas</h1>
+      <p>Web Development and Customer Experience</p>
+    </header>
+
     <section>
-      <header>
-        <h1>Robert <sup>(aka Robin)</sup> Thomas</h1>
-        <p>Web Development and Customer Experience</p>
-      </header>
-      <p>RobertAKARobin on
-        <a href="https://github.com/robertakarobin">GitHub</a>
-        <a href="http://www.linkedin.com/in/robertakarobin">LinkedIn</a>
-        <a href="https://www.facebook.com/robertakarobin">Facebook</a>
-        <a href="http://www.reddit.com/user/robertgfthomas">Reddit</a>
-        <a href="https://twitter.com/robertakarobin">Twitter</a>
-      </p>
-      <address>
-        4750 Chevy Chase Dr &num;107
-        <br />Bethesda, MD 20815
-      </address>
-      <address>
-        <a href="mailto:hello@robertakarobin.com">hello@robertakarobin.com</a>
-        <br />(513)280-7988
-      </address>
+      <h2 class="il">RobertAKARobin on</h2>
+      <ul class="il">
+        <li><a href="https://github.com/robertakarobin">GitHub</a></li>
+        <li><a href="http://www.linkedin.com/in/robertakarobin">LinkedIn</a></li>
+        <li><a href="https://www.facebook.com/robertakarobin">Facebook</a></li>
+        <li><a href="http://www.reddit.com/user/robertgfthomas">Reddit</a></li>
+        <li><a href="https://twitter.com/robertakarobin">Twitter</a></li>
+      </ul>
+      <div>
+        <address>
+          <p><a href="mailto:hello@robertakarobin.com">contact@robertakarobin.com</a>
+          <!-- Phone --><?php if($localhost) echo("<br/>" . $contact["phone"]); ?></p>
+        </address>
+        <aside>
+          <address>
+            <p><!-- Street --><?php if($localhost) echo($contact["street"] . "<br/>"); ?>
+            Bethesda, MD 20815</p>
+          </address>
+        </aside>
+      </div>
     </section>
 
     <main>
       <section>
-        <h2>Programming Skill Highlights</h2>
-        <table>
-<?php
-include("classes/tablestring.php");
-$eol = PHP_EOL;
-$portfolio = [];
-
-$portfolio["INAP"] = <<<HTML
-  <header>
-    <h3>INeedAPrompt</h3>
-    <p><a href="#">Maybe a link</a></p>
-  </header>
-  <p>This is some content.</p>
-HTML;
-$portfolio["MHTML"] = <<<HTML
-  <h3>Magnetic HTML</h3>
-  <p>Design a </p>
-HTML;
-
-$table = (new TableString(file_get_contents("views/tablestring.txt")))->transpose();
-$headers = $table->rowToHTML($table->headers["h"]);
-echo "<thead><tr>$headers</tr></thead>$eol";
-foreach($portfolio as $header => $html){
-  $tds = $table->rowHTMLByHeader($header);
-  echo "<tr><td colspan='$table->numCols'>$html</td></tr>$eol";
-  echo "<tr>$tds</tr>$eol";
-}
-echo "<tfoot><tr>$headers</tr></tfoot>$eol";
-?>
-        </table>
-        <!-- MongoDB, Visualforce, SOSL, SOQL, Heroku -->
+        <header>
+          <h2>Programming Portfolio Highlights</h2>
+          <aside>github.com/</aside>
+        </header>
+        <ol>
+          <li>
+            <header>
+              <h3><a href="http://garnet.wdidc.org">GArnet.wdidc.org</a></h3>
+              <ul class="il">
+                <li>Ruby</li>
+                <li>Rails</li>
+                <li>Javascript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>jQuery</li>
+                <li>PostgreSQL</li>
+              </ul>
+              <aside>ga-dc/<a href="http://github.com/ga-dc/garnet">garnet</a></aside>
+            </header>
+            <p>An open-source assignment and attendance tracking app for General Assembly.</p>
+          </li>
+          <li>
+            <header>
+              <h3><a href="http://www.magnetichtml.com">MagneticHTML.com</a></h3>
+              <ul class="il">
+                <li>Ruby</li>
+                <li>Sinatra</li>
+                <li>Javascript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>PHP</li>
+              </ul>
+              <aside>
+                <ul>
+                  <li>robertakarobin/<a href="http://github.com/robertakarobin/mhtml-sinatra">mhtml-sinatra</a></li>
+                  <li>robertakarobin/<a href="http://github.com/robertakarobin/magnetichtml">magnetichtml</a></li>
+                </ul>
+              </aside>
+            </header>
+            <p>Stick the Internet to your fridge! Design a webpage using magnetic tiles.</p>
+          </li>
+          <li>
+            <header>
+              <h3>AnonBot</h3>
+              <ul class="il">
+                <li>Javascript</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>Websockets</li>
+                <li>SQLite3</li>
+              </ul>
+              <aside>wdidc/<a href="http://github.com/wdidc/wdi_bot">wdi_bot</a></aside>
+            </header>
+            <p>A <a href="http://slack.com">Slack</a> service that allows students to post anonymous questions during class.</p>
+          </li>
+          <li>
+            <header>
+              <h3><a href="http://ineedaprompt.com">INeedAPrompt.com</a></h3>
+              <ul class="il">
+                <li>Javascript</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+              <aside>robertakarobin/<a href="http://github.com/robertakarobin/inap-node">inap-node</a></aside>
+            </header>
+            <p><?php echo number_format($inap_count); ?> prompts generated so far!</p>
+          </li>
+        </ol>
       </section>
 
       <section>
-        <h2>Recent Work History</h2>
+        <header><h2>Recent Work History</h2></header>
         <ol>
           <li>
             <header>
               <h3><a href="https://generalassemb.ly/instructors/robin-thomas/3803">GeneralAssemb.ly</a></h3>
               <p>Instructor, Web Development Immersive</p>
+              <aside>
+                <time datetime="2015-02-01">February 2015 &mdash; Present</time>
+                <p>Washington, DC</p>
+              </aside>
             </header>
-            <aside>
-              <time datetime="2015-02-01">February 2015 &mdash; Present</time>
-              <p>Washington, DC</p>
-            </aside>
             <p>Also taught web design at <a href="http://knowledgecommonsdc.org/classes/anatomy-website3/">KCDC</a>, <a href="http://techshop.ws/take_classes.html?storeId=12&amp;categoryId=26">TechShop</a>, <a href="http://wework.com">WeWork</a>, &amp; <a href="http://uberoffices.com">UberOffices</a>.</p>
           </li>
           <li>
@@ -122,7 +172,7 @@ echo "<tfoot><tr>$headers</tr></tfoot>$eol";
       </section>
 
       <section>
-        <h2>Education</h2>
+        <header><h2>Education</h2></header>
         <ul>
           <li>
             <header>
