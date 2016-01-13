@@ -41,6 +41,12 @@ body>section{
 section{
   padding-bottom:1rem;
 }
+em{
+  font-style:italic;
+}
+strong{
+  font-weight:bold;
+}
 
 .il,
 .il li{
@@ -51,6 +57,9 @@ section{
 }
 .il li:last-of-type:before{
   content:"and ";
+}
+.il li:last-of-type:after{
+  content:".";
 }
 
 nav a{
