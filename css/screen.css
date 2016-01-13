@@ -1,0 +1,52 @@
+body{
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:2rem;
+}
+h1{
+  text-shadow:0 0 1px #bbb;
+}
+h1 sup{
+  color:#999;
+}
+a{
+  text-decoration:underline;
+  color:#369;
+}
+a:hover{
+  color:#69c;
+}
+@media (max-width: 500px){
+  h1 sup{
+    display:block;
+    line-height:18px;
+  }
+  address{
+    margin-top:1rem;
+  }
+  footer>p,
+  h1+p,
+  h2{
+    margin:2rem auto;
+  }
+  aside{
+    font-style:italic;
+  }
+  h2{
+    text-transform:uppercase;
+  }
+  ol>li{
+    margin-bottom:2rem;
+  }
+}
+@media (min-width: 501px){
+  footer>p,
+  h1+p,
+  h2{
+    margin:1rem auto;
+  }
+  body{
+    max-width:800px;
+    padding-bottom:2rem;
+  }
+}

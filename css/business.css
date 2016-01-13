@@ -1,18 +1,3 @@
-*{
-  margin:0;
-  border:0;
-  padding:0;
-  font-size:inherit;
-  font-family:inherit;
-  font-weight:inherit;
-  border-collapse:collapse;
-  text-decoration:inherit;
-  color:inherit;
-  list-style:none;
-}
-*:focus{
-  outline:none;
-}
 body{
   font-size: 14px;
   line-height: 24px;
@@ -68,26 +53,21 @@ section{
   content:"and ";
 }
 
-@media screen{
-  body{
-    padding-left:10px;
-    padding-right:10px;
-    padding-top:2rem;
-  }
-  h1{
-    text-shadow:0 0 1px #bbb;
-  }
-  h1 sup{
-    color:#999;
-  }
-  a{
-    text-decoration:underline;
-    color:#369;
-  }
-  a:hover{
-    color:#69c;
-  }
+nav a{
+  display:inline-block;
+  padding-right:1rem;
+  padding-left:1rem;
+  margin:0.5rem 1rem;
+  border-radius:3px;
+  color:#fff;
+  background-color:#9bd;
+  text-decoration:none;
 }
+nav a:hover{
+  color:#fff;
+  background-color:#69c;
+}
+
 @media all and (min-width:501px){
   h3, li, section p{
     text-align:left;
@@ -112,50 +92,8 @@ section{
   }
 }
 
-@media screen and (min-width:501px){
-  footer>p,
-  h1+p,
-  h2{
-    margin:1rem auto;
-  }
-  body{
-    max-width:800px;
-    padding-bottom:2rem;
-  }
-}
-
-@media screen and (max-width:500px){
-  h1 sup{
-    display:block;
-    line-height:18px;
-  }
-  address{
-    margin-top:1rem;
-  }
-  footer>p,
-  h1+p,
-  h2{
-    margin:2rem auto;
-  }
-  aside{
-    font-style:italic;
-  }
-  h2{
-    text-transform:uppercase;
-  }
-  ol>li{
-    margin-bottom:2rem;
-  }
-}
-
 @media print{
-  h1{
-    text-shadow:none;
-  }
-  a{
-    text-decoration: none;
-  }
-  .np{
+  nav{
     display:none;
   }
 }
