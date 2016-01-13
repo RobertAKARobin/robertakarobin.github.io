@@ -1,12 +1,4 @@
 <!DOCTYPE html>
-<?php
-  if($_SERVER["SERVER_NAME"] == "localhost"){
-    $localhost = true;
-    $contact = json_decode(file_get_contents("contact.json"), true);
-  }
-  $inap_url = "http://ineedaprompt.com/count";
-  $inap_count = json_decode(file_get_contents($inap_url), true)["count"];
-?>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -15,14 +7,14 @@
     <title>Robert (aka Robin) Thomas</title>
     <link id="css" href="css/business.css" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <!-- <script src="scripts.js"></script> -->
+    <script src="scripts.js"></script>
   </head>
   <body>
 
     <section>
       <header>
         <h1>Robert <sup>(aka Robin)</sup> Thomas</h1>
-        <p>Full-Stack Web Development and Customer Experience</p>
+        <p>Full-Stack Web Development</p>
       </header>
       <div class="np">
         <p class="il">RobertAKARobin on</p>
@@ -35,16 +27,17 @@
         </ul>
       </div>
       <address>
-        <p><a href="mailto:hello@robertakarobin.com">contact@RobertAKARobin.com</a>
-        <!-- Phone --><?php if($localhost) echo("<br/>" . $contact["phone"]); ?></p>
-        <p><!-- Street --><?php if($localhost) echo($contact["street"] . "<br/>"); ?>
-        Bethesda, MD 20815</p>
+        <p>
+          <a href="mailto:hello@robertakarobin.com">contact@RobertAKARobin.com</a>
+          <span id="phone"></span>
+        </p>
+        <p><span id="street"></span>Bethesda, MD 20815</p>
       </address>
     </section>
 
     <main>
       <section>
-        <header><h2>Recent Employment History</h2></header>
+        <header><h2>Recent Work</h2></header>
         <ol>
           <li>
             <header>
@@ -95,13 +88,13 @@
 
       <section>
         <header>
-          <h2>Development Portfolio Highlights</h2>
+          <h2>Development Highlights</h2>
         </header>
         <ol>
           <li>
             <header>
               <h3><a href="http://ineedaprompt.com">INeedAPrompt.com</a></h3>
-              <p><?php echo number_format($inap_count); ?> prompts generated so far!</p>
+              <p><span id="promptNum">Over 2,000,000</span> prompts generated so far!</p>
             </header>
             <ul class="il">
               <li>Javascript</li>
@@ -114,7 +107,7 @@
           <li>
             <header>
               <h3><a href="http://www.magnetichtml.com">MagneticHTML.com</a></h3>
-              <p>Stick the Internet to your fridge.</p>
+              <p>Design a webpage on your fridge.</p>
             </header>
             <ul class="il">
               <li>Ruby</li>

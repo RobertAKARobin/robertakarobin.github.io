@@ -1,47 +1,40 @@
-var h = (function ViewHelpers(){
-  var out = {};
-  out.el = function(selector){
-    var base = selector.substring(0,1);
-    if(selector.substring(0,1) === "#"){
-      return document.getElementById(selector.substring(1));
-    }else{
-      return document.querySelector(selector);
-    }
-  }
-  return out;
-}());
+"use strict";
 
 window.onload = function(){
-  var table = new StringTable(h.el("#table"), ".", "x");
-}
 
-function StringTable(el){
-  var instance = this;
-  this.el = el;
-  this.rows = [];
-  instance.loadHelpers();
-  el.textContent.split(/[\n\r]/g).forEach(instance.parseLine);
-}
-StringTable.helpers = (function(){
-  var out = {};
-  out.parseLine = function(line){
-    var instance = this, row;
-    if(!(line = line.trim())) return;
-    row = line.split(/\s+/g);
-    if(!instance.numCols) instance.numCols = row.length;
-    if(instance.numCols !== row.length){
-      throw("Expected " + instance.numCols + " columns; got " + row.length);
-    }else instance.rows.push(row);
-  }
-  return out;
-}());
-StringTable.prototype = (function(){
-  var out = {};
-  out.loadHelpers = function(){
-    var instance = this, helperName;
-    for(helperName in StringTable.helpers){
-      instance[helperName] = StringTable.helpers[helperName].bind(instance);
+  var h = Helpers();
+
+  h.ajax("GET", "php/contact.php", function loadContact(response){
+    if(!response) return;
+    else response = JSON.parse(response);
+    h.el("#phone").innerHTML = "<br />" + response["phone"];
+    h.el("#street").innerHTML = response["street"] + "<br />";
+  });
+
+  h.ajax("GET", "php/count.php", function loadCount(response){
+    h.el("#promptNum").textContent = response;
+  });
+
+  function Helpers(){
+    var out = {};
+    out.el = function(selector){
+      var base = selector.substring(0,1);
+      if(selector.substring(0,1) === "#"){
+        return document.getElementById(selector.substring(1));
+      }else{
+        return document.querySelector(selector);
+      }
     }
+    out.ajax = function(method, path, callback){
+      var http = new XMLHttpRequest();
+      http.open(method, path, true);
+      http.onreadystatechange = function(){
+        if(this.readyState !== 4 || this.status !== 200) return;
+        callback(this.responseText);
+      }
+      http.send();
+    }
+    return out;
   }
-  return out;
-}());
+
+}
