@@ -3,6 +3,25 @@
 window.onload = function(){
 
   var h = Helpers();
+  var css = {
+    modes: {
+      "business": {},
+      "party":    {"media": "base"},
+      "print":    {"theme": "business", "media": "print"}
+    },
+    els: {
+      list: h.el("#modes"),
+      theme: h.el("#theme"),
+      media: h.el("#media")
+    }
+  };
+
+  (function setStartingCSS(){
+    var mode = (location.hash || "").substring(1);
+    var info = css.modes[mode];
+    if(!info) return;
+    setCSS(info["theme"] || mode, info["media"]);
+  }());
 
   h.ajax("GET", "php/contact.php", function loadContact(response){
     if(!response) return;
@@ -11,37 +30,36 @@ window.onload = function(){
     h.el("#street").innerHTML = response["street"] + "<br />";
   });
 
-  (function cssModes(){
-    var mode, modes = {
-      "business": {},
-      "party":    {"media": "base"},
-      "print":    {"theme": "business", "media": "print"}
-    };
-    var els = {
-      list: h.el("#modes"),
-      theme: h.el("#theme"),
-      media: h.el("#media")
-    }
-    for(mode in modes){
-      createModeOption(mode, modes[mode]);
+  (function setCSSModeOptions(){
+    var mode;
+    for(mode in css.modes){
+      createModeOption(mode, css.modes[mode]);
     }
     function createModeOption(name, info){
       var link = h.setEl("A");
       link.textContent = name.charAt(0).toUpperCase() + name.substring(1) + " Mode";
-      link.setAttribute("data-theme", (info["theme"] || name || "business"));
-      link.setAttribute("data-media", (info["media"] || "screen"));
+      link.href = "#" + name;
+      link.target = "_self";
+      link.setAttribute("data-theme", (info["theme"] || name));
+      link.setAttribute("data-media", info["media"] || "");
       link.addEventListener("click", optionListener);
-      els.list.appendChild(link);
+      css.els.list.appendChild(link);
     }
     function optionListener(){
-      els.theme.href = "css/" + this.getAttribute("data-theme") + ".css";
-      els.media.href = "css/" + this.getAttribute("data-media") + ".css";
+      setCSS(this.getAttribute("data-theme"), this.getAttribute("data-media"));
     }
   }());
 
   h.ajax("GET", "php/count.php", function loadCount(response){
     h.el("#promptNum").textContent = response;
   });
+
+  function setCSS(theme, media){
+    theme = (theme || "business");
+    media = (media || "screen");
+    css.els.theme.href = "css/" + theme + ".css";
+    css.els.media.href = "css/" + media + ".css";
+  }
 
   function Helpers(){
     var out = {};
