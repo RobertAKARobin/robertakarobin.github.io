@@ -3,9 +3,6 @@ body{
   padding-right:10px;
   padding-top:2rem;
 }
-h1{
-  text-shadow:0 0 1px #bbb;
-}
 h1 sup{
   color:#999;
 }
