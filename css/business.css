@@ -47,6 +47,9 @@ em{
 strong{
   font-weight:bold;
 }
+aside li{
+  font-style:italic;
+}
 
 .il,
 .il li{
@@ -55,10 +58,10 @@ strong{
 .il li:not(:last-of-type):after{
   content:",";
 }
-.il li:last-of-type:before{
+.il.and li:nth-last-child(2)+li:last-of-type:before{
   content:"and ";
 }
-.il li:last-of-type:after{
+.il.and li:last-of-type:after{
   content:".";
 }
 
