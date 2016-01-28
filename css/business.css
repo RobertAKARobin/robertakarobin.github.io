@@ -32,10 +32,11 @@ address{
   font-style:normal;
   position:relative;
 }
-section, footer{
+.outline section,
+.outline footer{
   border-top:1px solid #000;
 }
-body>section{
+.outline>section{
   border-top:none;
 }
 section{
@@ -49,6 +50,13 @@ strong{
 }
 aside li{
   font-style:italic;
+}
+img{
+  display:block;
+}
+.text p{
+  text-indent:20px;
+  margin-bottom:20px;
 }
 
 .il,
