@@ -96,3 +96,30 @@ section{
 .list li:not(:last-child):after{
   content:", ";
 }
+
+.blocklist > li{
+  display:flex;
+  justify-content:center;
+  border-style:solid;
+  border-width:10px;
+  border-color:#fff #eee;
+}
+.blocklist > li > div{
+  flex-grow:1;
+  align-self:center;
+}
+.blocklist > li > img{
+  width:150px;
+  height:150px;
+  margin:0 10px;
+}
+.blocklist > li:nth-child(odd){
+  flex-direction:row;
+  text-align:left;
+  border-left-width:0;
+}
+.blocklist > li:nth-child(even){
+  flex-direction:row-reverse;
+  text-align:right;
+  border-right-width:0;
+}
