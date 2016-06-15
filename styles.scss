@@ -1,3 +1,7 @@
+$yellow:  #fd6;
+$orange:  #fa0;
+$lblue:   #58b;
+$dblue:   #369;
 *{
   margin:0;
   padding:0;
@@ -43,9 +47,9 @@ h2{
   font-weight:bold;
 }
 a{
-  color:#58b;
+  color:$lblue;
   &:hover{
-    color:#369;
+    color:$dblue;
   }
 }
 
@@ -61,11 +65,11 @@ section{
 }
 @keyframes flash{
   from{
-    text-shadow: 5px 5px 0px #fd6,
-                 -5px -5px 0px #fd6;
+    text-shadow: 5px 5px 0px $yellow,
+                 -5px -5px 0px $yellow;
   }
   to{
-    text-shadow: 0px 0px 0px #fd6;
+    text-shadow: 0px 0px 0px $yellow;
   }
 }
 
@@ -190,12 +194,36 @@ address{
       line-height:50px;
       background-color:#fc0;
       color:#666;
-      text-shadow:1px 1px 0px #fd6;
+      text-shadow:1px 1px 0px $yellow;
       transition:background-color 0.2s;
 
       &:hover{
-        background-color:#fa0;
+        background-color:$orange;
       }
+    }
+  }
+}
+
+.icons{
+  li{
+    display:inline-block;
+    width:50px;
+    height:50px;
+    border-radius:5px;
+    background-color:$lblue;
+    background-image:url(images/icons.png);
+    background-size:250px 50px;
+    transition: opacity 0.2s;
+    opacity:0.5;
+
+    a{
+      display:block;
+      width:100%;
+      height:100%;
+      font-size:0;
+    }
+    &:hover{
+      opacity:1;
     }
   }
 }
