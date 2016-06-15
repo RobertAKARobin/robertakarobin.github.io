@@ -23,11 +23,10 @@ window.onload = function(){
     setCSS(info["theme"] || mode, info["media"]);
   }());
 
-  h.ajax("GET", "php/contact.php", function loadContact(response){
+  h.ajax("GET", "/contact.json", function loadContact(response){
     if(!response) return;
-    else response = JSON.parse(response);
-    h.el("#phone").innerHTML = "<br />" + response["phone"];
-    h.el("#street").innerHTML = response["street"] + "<br />";
+    h.el("#phone").innerHTML = "<br />" + response.phone;
+    h.el("#street").innerHTML = response.street + "<br />";
   });
 
   (function setCSSModeOptions(){
@@ -50,8 +49,10 @@ window.onload = function(){
     }
   }());
 
-  h.ajax("GET", "php/count.php", function loadCount(response){
-    h.el("#promptNum").textContent = response;
+  h.ajax("GET", "http://ineedaprompt.com/count", function loadCount(response){
+    if(response.success){
+      h.el("#promptNum").textContent = response.count.toLocaleString();
+    }
   });
 
   function setCSS(theme, media){
@@ -76,7 +77,7 @@ window.onload = function(){
       http.open(method, path, true);
       http.onreadystatechange = function(){
         if(this.readyState !== 4 || this.status !== 200) return;
-        callback(this.responseText);
+        callback(JSON.parse(this.responseText));
       }
       http.send();
     }
