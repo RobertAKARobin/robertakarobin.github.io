@@ -80,8 +80,10 @@ address {
   height: 100vh;
   min-height: 500px;
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
-  justify-content: center;
+  -webkit-flex-direction: column;
+  -webkit-justify-content: center;
   border: 0;
   padding: 0;
 }
@@ -98,6 +100,7 @@ address {
   margin-left: auto;
   margin-right: auto;
   transition: transform 1s, box-shadow 1s;
+  -webkit-transition: -webkit-transform 1s, box-shadow 1s;
   background-image: url("images/robin_mustache.jpg");
   background-size: contain;
   cursor: pointer;
@@ -107,6 +110,7 @@ address {
 }
 .headshot:active {
   transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
   box-shadow: 0px 0px 100px 50px #fc0, 0px 0px 100px 20px #960 inset;
 }
 .headshot:active img {
@@ -123,6 +127,7 @@ address {
 
 .blocklist > li {
   display: flex;
+  display: -webkit-flex;
   justify-content: center;
   border-style: solid;
   border-width: 10px;
@@ -138,16 +143,19 @@ address {
 }
 .blocklist > li:nth-child(odd) {
   flex-direction: row;
+  -webkit-flex-direction: row;
   text-align: left;
   border-left-width: 0;
 }
 .blocklist > li:nth-child(even) {
   flex-direction: row-reverse;
+  -webkit-flex-direction: row-reverse;
   text-align: right;
   border-right-width: 0;
 }
 .blocklist > li > div {
   flex-grow: 1;
+  -webkit-flex-grow: 1;
   align-self: center;
 }
 .blocklist > li > img {
@@ -171,12 +179,14 @@ address {
 .nav {
   width: 100%;
   display: flex;
+  display: -webkit-flex;
   position: fixed;
   z-index: 9999;
 }
 .nav li {
   list-style-type: none;
   flex-grow: 1;
+  -webkit-flex-grow: 1;
 }
 .nav li a {
   display: block;
