@@ -47,6 +47,7 @@ h2 {
 }
 
 a {
+  cursor: pointer;
   color: #58b;
 }
 a:hover {
@@ -74,6 +75,10 @@ section:target h1 {
 address {
   white-space: pre-line;
   margin-bottom: 20px;
+}
+
+aside {
+  font-size: 0.7em;
 }
 
 .hero {
