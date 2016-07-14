@@ -4,14 +4,7 @@ window.onload = function(){
 
   ajax("GET", "/contact.json", function loadContact(response){
     if(response){
-      el("#phone").innerHTML = "<br />" + response.phone;
-      el("#street").innerHTML = response.street + "<br />";
-    }
-  });
-
-  ajax("GET", "http://ineedaprompt.com/count", function loadCount(response){
-    if(response.success){
-      el("#promptNum").textContent = response.count.toLocaleString();
+      el("#phone").innerHTML = response.phone;
     }
   });
 

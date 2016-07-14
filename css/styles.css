@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  border-collapse: collapse;
+  text-decoration: inherit;
+  color: inherit;
+  list-style: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+html, body {
+  position: relative;
+  font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  width: 100%;
+}
+
+section, main, hr {
+  clear: both;
+  position: relative;
+}
+
+.title header {
+  float: left;
+}
+.title address {
+  float: right;
+  text-align: right;
+}
+.title address span {
+  display: block;
+}
+
+section {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+section.title {
+  margin-top: 0;
+}
+
+hr {
+  border-bottom: 5px solid #ccc;
+}
+
+aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+
+li {
+  position: relative;
+  padding-left: 1em;
+}
+li:before {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  content: "\2022";
+}
+li li {
+  margin-left: 1em;
+}
+li li:before {
+  content: "-";
+}
+
+h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+h1 sub {
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+h4 {
+  font-weight: bold;
+  display: inline;
+}
+h4:after {
+  content: ",";
+}
+
+em {
+  font-style: italic;
+}
+
+a {
+  cursor: pointer;
+}
+
+@media screen {
+  body {
+    width: 8.5in;
+    margin: 0 auto;
+  }
+
+  a {
+    color: #37a;
+  }
+}
