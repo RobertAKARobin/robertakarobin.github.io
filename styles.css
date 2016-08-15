@@ -122,6 +122,21 @@ aside {
   opacity: 0;
 }
 
+.list.inline {
+  display: inline-block;
+  white-space: nowrap;
+  display: inline;
+}
+.list.inline:before {
+  content: "(";
+}
+.list.inline:after {
+  content: ")";
+}
+.list.inline, .list.inline li {
+  font-weight: normal;
+  font-size: 12px;
+}
 .list li {
   display: inline;
   font-weight: bold;
@@ -167,6 +182,10 @@ aside {
   width: 150px;
   height: 150px;
   margin: 0 10px;
+}
+.blocklist > li li {
+  text-align: left;
+  list-style-position: inside;
 }
 
 .prose {

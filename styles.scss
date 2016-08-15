@@ -129,6 +129,21 @@ aside{
 }
 
 .list{
+  &.inline{
+    display:inline-block;
+    white-space:nowrap;
+    &:before{
+      content:"(";
+    }
+    &:after{
+      content:")";
+    }
+    display:inline;
+    &, li{
+      font-weight:normal;
+      font-size:12px;
+    }
+  }
   li{
     display:inline;
     font-weight:bold;
@@ -175,6 +190,10 @@ aside{
       width:150px;
       height:150px;
       margin:0 10px;
+    }
+    li{
+      text-align:left;
+      list-style-position:inside;
     }
   }
 }
