@@ -198,6 +198,7 @@ aside {
 }
 .prose li {
   list-style-position: inside;
+  text-align: left;
 }
 
 .nav {
