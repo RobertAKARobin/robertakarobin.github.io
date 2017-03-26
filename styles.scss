@@ -1,7 +1,6 @@
-$yellow:  #fd6;
-$orange:  #fa0;
-$lblue:   #58b;
-$dblue:   #369;
+$main:		#37c;
+$mainhi:	#9cf;
+$mainlo:	#024;
 *{
   margin:0;
   padding:0;
@@ -28,10 +27,10 @@ body{
 h1{
   font-size:36px;
   line-height:50px;
-  font-weight:bold;
+  color:$mainlo;
 
   sub{
-    color:#aaa;
+    color:#aab;
     vertical-align:baseline;
     &:before{
       content:"(";
@@ -42,15 +41,19 @@ h1{
   }
 }
 h2{
+  font-size:36px;
+  line-height:50px;
+  color:$mainlo;
+}
+h3{
   font-size:24px;
   line-height:40px;
-  font-weight:bold;
 }
 a{
   cursor:pointer;
-  color:$lblue;
+  color:$main;
   &:hover{
-    color:$dblue;
+    color:$mainlo;
   }
 }
 
@@ -60,17 +63,17 @@ section{
   max-width:800px;
   margin:0 auto;
 
-  &:target h1{
+  &:target h2{
     animation:flash 1s;
   }
 }
 @keyframes flash{
   from{
-    text-shadow: 5px 5px 0px $yellow,
-                 -5px -5px 0px $yellow;
+    text-shadow: 5px 5px 0px #fff,
+                 -5px -5px 0px #fff;
   }
   to{
-    text-shadow: 0px 0px 0px $yellow;
+    text-shadow: 0px 0px 0px $mainhi;
   }
 }
 
@@ -98,6 +101,9 @@ aside{
     width:100%;
     height:100%;
   }
+  p{
+    margin:12px;
+  }
 }
 
 .headshot{
@@ -119,8 +125,8 @@ aside{
   &:active{
     transform:rotate(360deg);
     -webkit-transform:rotate(360deg);
-    box-shadow: 0px 0px 100px 50px #fc0,
-                0px 0px 100px 20px #960 inset;
+    box-shadow: 0px 0px 100px 50px $mainhi,
+                0px 0px 100px 20px $main inset;
 
     img{
       opacity:0;
@@ -146,7 +152,6 @@ aside{
   }
   li{
     display:inline;
-    font-weight:bold;
 
     &:not(:last-child):after{
       content:", ";
@@ -227,13 +232,14 @@ aside{
     a{
       display:block;
       line-height:50px;
-      background-color:#fc0;
-      color:#666;
-      text-shadow:1px 1px 0px $yellow;
+      background-color:$mainhi;
+      color:$main;
+	  text-shadow:none;
       transition:background-color 0.2s;
 
       &:hover{
-        background-color:$orange;
+        background-color:$main;
+		color:$mainlo;
       }
     }
   }
@@ -245,7 +251,7 @@ aside{
     width:50px;
     height:50px;
     border-radius:5px;
-    background-color:$lblue;
+    background-color:$main;
     background-image:url(images/icons.png);
     background-size:300px 50px;
     transition: opacity 0.2s;
