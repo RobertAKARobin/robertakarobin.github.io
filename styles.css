@@ -232,7 +232,7 @@ aside {
   border-radius: 5px;
   background-color: #58b;
   background-image: url(images/icons.png);
-  background-size: 250px 50px;
+  background-size: 300px 50px;
   transition: opacity 0.2s;
   opacity: 0.5;
 }
