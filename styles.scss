@@ -88,12 +88,10 @@ aside{
 
 .hero{
 	height:100vh;
-	min-height:500px;
+	min-height:680px;
 	display:flex;
-	display:-webkit-flex;
 	flex-direction:column;
-	-webkit-flex-direction:column;
-	-webkit-justify-content:center;
+	justify-content:center;
 	border:0;
 	padding:0;
 
@@ -109,6 +107,7 @@ aside{
 .headshot{
 	width:300px;
 	height:300px;
+	margin-top:50px;
 	border-radius:50%;
 	overflow:hidden;
 	margin-left:auto;
@@ -222,6 +221,7 @@ aside{
 	display:flex;
 	display:-webkit-flex;
 	position:fixed;
+	top:0;
 	z-index:9999;
 
 	li{
