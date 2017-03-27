@@ -26,6 +26,14 @@ body{
 	overflow-x:hidden;
 	text-align:center;
 }
+section.hero:before{
+	display:block;
+	white-space:pre-wrap;
+	content:"Oh hi, l33t haxx0r!\AThis is the exact same page as the previous one.\AThe content and HTML haven't changed,\Ait's just using a different stylesheet!\AI use this to demonstrate the power of CSS to my web design students.";
+	text-shadow:1px 1px 0px #f00;
+	margin-bottom:20px;
+	background-color:rgba(100,100,100,0.7);
+}
 h1{
 	color:#f00;
 	font-size:48px;
