@@ -23,6 +23,20 @@
 		}
 	});
 })();
+
+window.addEventListener('DOMContentLoaded', function getINAPCount(){
+	var target = document.getElementById('INAPCount');
+	var request = new XMLHttpRequest();
+	var count = 0;
+	request.open('GET', 'https://ineedaprompt.com/count', true);
+	request.onreadystatechange = function(){
+		if(request.readyState == 4 && request.status >= 200 && request.status <= 400){
+			count = parseInt(JSON.parse(request.responseText).count);
+			target.textContent = count.toLocaleString();
+		}
+	}
+	request.send();
+});
 	</script>
 </head>
 <body>
@@ -89,7 +103,7 @@
 				<img src="images/node.png" alt="Node logo" />
 				<div>
 					<h3><a href="http://ineedaprompt.com/">INeedAPrompt.com</a></h3>
-					<p>2,439,328 prompts generated so far!</p>
+					<p><span id="INAPCount">Over 3,000,000</span> prompts generated so far!</p>
 					<ul class="list">
 						<li>Node.js</li>
 						<li>Express.js</li>
