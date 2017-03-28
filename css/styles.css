@@ -110,6 +110,14 @@ a {
   cursor: pointer;
 }
 
+img {
+  display: block;
+}
+
+.text p {
+  margin: 1em 0;
+}
+
 @media print {
   body > section:last-child {
     margin-bottom: 0;
