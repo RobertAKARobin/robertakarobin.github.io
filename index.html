@@ -7,17 +7,15 @@
 	<!-- https://github.com/RobertAKARobin/robertakarobin.github.io -->
 	<script>
 (function TOPSECRET(){
-	var keystrokes = [];
-	var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65].join(' ');
+	var keystring = '';
+	var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65].join('.') + '.';
 	var isPartyMode = false;
 	window.addEventListener('keyup', function(event){
-		var keystring;
-		keystrokes.push(event.keyCode);
-		keystring = keystrokes.join(' ');
+		keystring += (event.keyCode + '.');
 		if(konami.indexOf(keystring) < 0){
-			keystrokes = [];
+			keystring = '';
 		}else if(keystring == konami){
-			keystrokes = [];
+			keystring = '';
 			stylesheet.setAttribute('href', (isPartyMode ? 'styles.css' : 'party.css'));
 			isPartyMode = !(isPartyMode);
 			window.scrollTo(0,0);
