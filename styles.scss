@@ -210,28 +210,34 @@ aside{
 	}
 }
 
-.nav{
-	width:100%;
-	display:flex;
-	position:fixed;
-	top:0;
-	z-index:9999;
+nav{
+	h2{
+		display:none;
+	}
 
-	li{
-		list-style-type:none;
-		flex-grow:1;
+	ul{
+		width:100%;
+		display:flex;
+		position:fixed;
+		top:0;
+		z-index:9999;
 
-		a{
-			display:block;
-			line-height:50px;
-			background-color:$mainhi;
-			color:$main;
-		text-shadow:none;
-			transition:background-color 0.2s;
+		li{
+			list-style-type:none;
+			flex-grow:1;
 
-			&:hover{
-				background-color:$main;
-		color:$mainlo;
+			a{
+				display:block;
+				line-height:50px;
+				background-color:$mainhi;
+				color:$main;
+			text-shadow:none;
+				transition:background-color 0.2s;
+
+				&:hover{
+					background-color:$main;
+			color:$mainlo;
+				}
 			}
 		}
 	}

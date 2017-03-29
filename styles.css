@@ -201,18 +201,21 @@ aside {
   text-align: left;
 }
 
-.nav {
+nav h2 {
+  display: none;
+}
+nav ul {
   width: 100%;
   display: flex;
   position: fixed;
   top: 0;
   z-index: 9999;
 }
-.nav li {
+nav ul li {
   list-style-type: none;
   flex-grow: 1;
 }
-.nav li a {
+nav ul li a {
   display: block;
   line-height: 50px;
   background-color: #9cf;
@@ -220,7 +223,7 @@ aside {
   text-shadow: none;
   transition: background-color 0.2s;
 }
-.nav li a:hover {
+nav ul li a:hover {
   background-color: #37c;
   color: #024;
 }
