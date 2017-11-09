@@ -29,6 +29,8 @@ function setKonamiListener(konamiCallback){
 
 window.addEventListener('DOMContentLoaded', function(){
 
+	getINAPCount();
+	
 	var stylesheet = document.getElementById('stylesheet');
 	var isPartyMode = false;
 	setKonamiListener(togglePartyMode);
