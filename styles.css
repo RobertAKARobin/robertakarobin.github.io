@@ -30,7 +30,7 @@ h1 {
   color: #024;
 }
 h1 sub {
-  color: #aab;
+  color: #37c;
   vertical-align: baseline;
 }
 h1 sub:before {
@@ -218,14 +218,14 @@ nav ul li {
 nav ul li a {
   display: block;
   line-height: 50px;
-  background-color: #9cf;
-  color: #37c;
+  background-color: #f0f0f0;
+  color: #024;
   text-shadow: none;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
 nav ul li a:hover {
-  background-color: #37c;
-  color: #024;
+  background-color: #fff;
+  color: #37c;
 }
 
 .icons li {

@@ -30,7 +30,7 @@ h1{
 	color:$mainlo;
 
 	sub{
-		color:#aab;
+		color:$main;
 		vertical-align:baseline;
 		&:before{
 			content:"(";
@@ -229,14 +229,14 @@ nav{
 			a{
 				display:block;
 				line-height:50px;
-				background-color:$mainhi;
-				color:$main;
-			text-shadow:none;
-				transition:background-color 0.2s;
+				background-color:#f0f0f0;
+				color:$mainlo;
+				text-shadow:none;
+				transition:background-color 0.2s, color 0.2s;
 
 				&:hover{
-					background-color:$main;
-			color:$mainlo;
+					background-color:#fff;
+					color:$main;
 				}
 			}
 		}
