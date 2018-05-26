@@ -23,9 +23,12 @@ html, body{
 	width:100%;
 }
 
-section, main, hr{
+section{
 	clear:both;
 	position:relative;
+	margin-bottom:1em;
+
+
 }
 
 .title{
@@ -39,18 +42,6 @@ section, main, hr{
 			display:block;
 		}
 	}
-}
-
-
-section{
-	margin-bottom:1em;
-
-	&.title{
-		margin-top:0;
-	}
-}
-hr{
-	border-bottom:5px solid #ccc;
 }
 
 aside{
@@ -76,29 +67,21 @@ li{
 	}
 }
 
-h1, h2{
+h1, h2, h3{
 	font-weight:bold;
-	text-transform:uppercase;
-	text-decoration:underline;
+
 	sub{
 		font-weight:normal;
 		vertical-align:baseline;
 	}
 }
+h1, h2{
+	text-decoration:underline;
+	font-weight:bold;
+}
 h2{
 	border-top:5px solid #ccc;
 	padding-top:1em;
-}
-h3{
-	font-weight:bold;
-}
-h4{
-	font-weight:bold;
-	display:inline;
-
-	&:after{
-		content:",";
-	}
 }
 
 em{
@@ -111,13 +94,15 @@ a{
 img{
 	display:block;
 }
-.text{
-	p{
-		margin:1em 0;
+
+.social{
+	svg{
+		height:1.6em;
+		vertical-align:bottom;
 	}
 }
 @media print{
-	body > section:last-child{
+	section:last-of-type{
 		margin-bottom:0;
 	}
 }

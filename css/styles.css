@@ -24,9 +24,10 @@ html, body {
   width: 100%;
 }
 
-section, main, hr {
+section {
   clear: both;
   position: relative;
+  margin-bottom: 1em;
 }
 
 .title header {
@@ -37,17 +38,6 @@ section, main, hr {
 }
 .title address span {
   display: block;
-}
-
-section {
-  margin-bottom: 1em;
-}
-section.title {
-  margin-top: 0;
-}
-
-hr {
-  border-bottom: 5px solid #ccc;
 }
 
 aside {
@@ -74,31 +64,22 @@ li li:before {
   content: "-";
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: underline;
 }
-h1 sub, h2 sub {
+h1 sub, h2 sub, h3 sub {
   font-weight: normal;
   vertical-align: baseline;
+}
+
+h1, h2 {
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 h2 {
   border-top: 5px solid #ccc;
   padding-top: 1em;
-}
-
-h3 {
-  font-weight: bold;
-}
-
-h4 {
-  font-weight: bold;
-  display: inline;
-}
-h4:after {
-  content: ",";
 }
 
 em {
@@ -114,12 +95,13 @@ img {
   display: block;
 }
 
-.text p {
-  margin: 1em 0;
+.social svg {
+  height: 1.6em;
+  vertical-align: bottom;
 }
 
 @media print {
-  body > section:last-child {
+  section:last-of-type {
     margin-bottom: 0;
   }
 }
