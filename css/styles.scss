@@ -15,41 +15,21 @@
 	outline:none;
 }
 
-html, body{
-	position:relative;
+:root{
 	font-family:"Open Sans", "Arial", sans-serif;
 	font-size:14px;
 	line-height:1.6em;
 	width:100%;
 }
-
+body{
+	position:relative;
+}
 section{
 	clear:both;
 	position:relative;
 	margin-bottom:1em;
-
-
 }
 
-.title{
-	header{
-		float:left;
-	}
-
-	address{
-		text-align:right;
-		span{
-			display:block;
-		}
-	}
-}
-
-aside{
-	position:absolute;
-	top:0;
-	right:0;
-	text-align:right;
-}
 li{
 	position:relative;
 	padding-left:1em;
@@ -108,10 +88,30 @@ img{
 }
 @media screen{
 	body{
-		width:8.5in;
 		margin:0 auto;
+		padding:10px;
 	}
 	a{
 		color:#37a;
+	}
+	.title{
+		text-align:center;
+	}
+}
+@media print, screen and (min-width: 6.5in){
+	aside{
+		position:absolute;
+		top:0;
+		right:0;
+		text-align:right;
+	}
+	.title{
+		text-align:left;
+	}
+}
+@media screen and (min-width: 9in){
+	body{
+		width:8.5in;
+		padding:0;
 	}
 }
