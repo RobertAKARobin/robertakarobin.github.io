@@ -50,22 +50,29 @@ li li:before {
   content: "-";
 }
 
-h1, h2, h3 {
-  font-weight: bold;
-}
 h1 sub, h2 sub, h3 sub {
   font-weight: normal;
   vertical-align: baseline;
 }
 
-h1, h2 {
-  text-decoration: underline;
+h1 {
   font-weight: bold;
+  text-decoration: underline;
 }
 
 h2 {
+  font-weight: bold;
   border-top: 5px solid #ccc;
   padding-top: 1em;
+  text-align: center;
+}
+
+h3 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+h3 + p {
+  font-weight: bold;
 }
 
 em {
@@ -97,10 +104,6 @@ img {
     padding: 10px;
   }
 
-  a {
-    color: #37a;
-  }
-
   header, aside {
     text-align: center;
   }
@@ -113,8 +116,12 @@ img {
     text-align: right;
   }
 
-  header, aside {
+  header {
     text-align: left;
+  }
+
+  aside {
+    text-align: right;
   }
 }
 @media screen and (min-width: 9in) {
