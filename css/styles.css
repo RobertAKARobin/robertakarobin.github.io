@@ -101,7 +101,7 @@ img {
     color: #37a;
   }
 
-  .title {
+  header, aside {
     text-align: center;
   }
 }
@@ -113,7 +113,7 @@ img {
     text-align: right;
   }
 
-  .title {
+  header, aside {
     text-align: left;
   }
 }
