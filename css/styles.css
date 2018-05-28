@@ -104,6 +104,10 @@ img {
     padding: 10px;
   }
 
+  a {
+    color: #37a;
+  }
+
   header, aside {
     text-align: center;
   }
