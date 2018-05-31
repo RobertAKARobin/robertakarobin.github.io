@@ -18,13 +18,15 @@
 
 :root {
   font-family: "Garamond", "Times New Roman", serif;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 1.6em;
   width: 100%;
 }
 
 body {
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 section {
@@ -86,49 +88,79 @@ img {
   display: block;
 }
 
+.social a {
+  text-decoration: none;
+}
 .social svg {
   height: 1.6em;
   vertical-align: bottom;
 }
 
-@media print {
-  section:last-of-type {
-    margin-bottom: 0;
-  }
-}
 @media screen {
+  :root {
+    color: #292929;
+  }
+
   body {
-    margin: 0 auto;
-    padding: 10px;
+    padding: 1em;
+    margin-top: 3em;
+  }
+
+  section {
+    margin-bottom: 4em;
+  }
+
+  h2 {
+    padding-top: 3em;
+    padding-bottom: 1em;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    color: #006DB3;
   }
 
   a {
-    color: #37a;
+    color: #009BFF;
+    text-decoration: underline;
+  }
+  a:hover {
+    color: #FF8E00;
   }
 
   header, aside {
     text-align: center;
   }
 }
-@media print, screen and (min-width: 7in) {
+@media screen and (min-width: 900px) {
+  body {
+    width: 850px;
+  }
+}
+@media print, screen and (min-width: 900px) {
+  header {
+    text-align: left;
+  }
+
   aside {
     position: absolute;
     top: 0;
     right: 0;
     text-align: right;
   }
-
-  header {
-    text-align: left;
-  }
-
-  aside {
-    text-align: right;
-  }
 }
-@media screen and (min-width: 9in) {
+@media print {
+  :root {
+    font-size: 14px;
+    line-height: 1.6em;
+    color: #000;
+  }
+
   body {
-    width: 8.5in;
     padding: 0;
+  }
+
+  section:last-of-type {
+    margin-bottom: 0;
   }
 }
