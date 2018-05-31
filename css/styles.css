@@ -110,7 +110,7 @@ img {
     text-align: center;
   }
 }
-@media print, screen and (min-width: 6.5in) {
+@media print, screen and (min-width: 7in) {
   aside {
     position: absolute;
     top: 0;
