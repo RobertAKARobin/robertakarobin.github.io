@@ -42,7 +42,6 @@ li{
 		content:"\2022";
 	}
 	li{
-		margin-left:1em;
 		&:before{
 			content:"-";
 		}
@@ -78,12 +77,15 @@ h3{
 		font-weight:bold;
 	}
 }
+h4{
+	font-weight:bold;
+}
 
 a{
 	cursor:pointer;
 }
-img{
-	display:block;
+em{
+	font-style:italic;
 }
 
 .social{
