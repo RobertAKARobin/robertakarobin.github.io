@@ -45,9 +45,6 @@ li:before {
   left: 0;
   content: "\2022";
 }
-li li {
-  margin-left: 1em;
-}
 li li:before {
   content: "-";
 }
@@ -80,12 +77,16 @@ h3 + p {
   font-weight: bold;
 }
 
+h4 {
+  font-weight: bold;
+}
+
 a {
   cursor: pointer;
 }
 
-img {
-  display: block;
+em {
+  font-style: italic;
 }
 
 .social a {
