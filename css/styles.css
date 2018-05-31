@@ -17,7 +17,7 @@
 }
 
 :root {
-  font-family: "Open Sans", "Arial", sans-serif;
+  font-family: "Garamond", "Times New Roman", serif;
   font-size: 14px;
   line-height: 1.6em;
   width: 100%;
@@ -59,25 +59,23 @@ h1 {
   font-weight: bold;
   text-decoration: underline;
 }
+h1 + p {
+  font-weight: bold;
+}
 
 h2 {
   font-weight: bold;
-  border-top: 5px solid #ccc;
+  border-top: 1px solid #ccc;
   padding-top: 1em;
   text-align: center;
 }
 
-h3 {
+h3 a {
   font-weight: bold;
   text-decoration: underline;
 }
 h3 + p {
   font-weight: bold;
-}
-
-em {
-  font-weight: bold;
-  font-style: italic;
 }
 
 a {
