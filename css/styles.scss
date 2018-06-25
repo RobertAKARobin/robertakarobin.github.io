@@ -27,12 +27,32 @@ body{
 	margin-right:auto;
 }
 section{
-	clear:both;
 	position:relative;
 	margin-bottom:1em;
 }
+nav{
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	border-top:1px solid rgba(0,0,0,0.1);
+	background-color:#fff;
+	opacity:0.9;
+	transition:0.1s opacity;
 
-li{
+	&:hover{
+		opacity:1;
+	}
+
+	ul{
+		margin:0 auto;
+		display:flex;
+		flex-direction:row;
+		justify-content:space-between;
+	}
+}
+
+section li{
 	position:relative;
 	padding-left:1em;
 	&:before{
@@ -105,6 +125,9 @@ em{
 		padding:1em;
 		margin-top:3em;
 	}
+	nav ul{
+		padding:0 1em;
+	}
 	section{
 		margin-bottom:4em;
 	}
@@ -133,6 +156,10 @@ em{
 	body{
 		width:850px;
 	}
+	nav ul{
+		width:850px;
+		margin:0 auto;
+	}
 }
 @media print, screen and (min-width: 900px){
 	header{
@@ -156,5 +183,8 @@ em{
 	}
 	section:last-of-type{
 		margin-bottom:0;
+	}
+	nav{
+		display:none;
 	}
 }
