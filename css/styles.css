@@ -28,6 +28,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+body.extended [data-template=one-pager] {
+  display: none;
+}
+body.one-pager [data-template=extended] {
+  display: none;
+}
 
 section {
   position: relative;
@@ -86,15 +92,6 @@ h2 {
   border-top: 1px solid #ccc;
   padding-top: 1em;
   text-align: center;
-}
-.one-pager h2 {
-  color: black;
-}
-.geocities h2 {
-  color: red;
-}
-.extended h2 {
-  color: blue;
 }
 
 h3 a {
