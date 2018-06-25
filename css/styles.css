@@ -87,6 +87,15 @@ h2 {
   padding-top: 1em;
   text-align: center;
 }
+.one-pager h2 {
+  color: black;
+}
+.geocities h2 {
+  color: red;
+}
+.extended h2 {
+  color: blue;
+}
 
 h3 a {
   font-weight: bold;
