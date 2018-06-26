@@ -1,5 +1,11 @@
 $data-templates: one-pager extended geocities;
 
+$main:#19A5FF;
+$main-darker:#009BFF;
+$main-darkest:#006CB2;
+$compliment:#FF9500;
+$compliment-darker:#B26900;
+
 *{
 	margin:0;
 	border:0;
@@ -155,15 +161,23 @@ em{
 	}
 	h1{
 		text-transform:uppercase;
-		color:#006DB3;
+		color:$compliment-darker;
 	}
 	a{
-		color:#009BFF;
+		color:$main;
 		text-decoration:underline;
 
-		&:hover,
+		&:hover{
+			color:$compliment-darker;
+		}
 		&[data-template-active]{
-			color:#FF8E00;
+			color:$compliment;
+		}
+	}
+	.social svg{
+		fill:$main-darker;
+		&:hover{
+			fill:$compliment-darker;
 		}
 	}
 }
@@ -242,7 +256,9 @@ body.geocities{
 		}
 
 		a{
-			color:#0ff;
+			&, &:hover{
+				color:#0ff;
+			}
 			display:inline-block;
 			position:relative;
 			
@@ -259,7 +275,9 @@ body.geocities{
 			}
 		}
 		svg{
-			fill:#fff;
+			&, &:hover{
+				fill:#fff;
+			}
 		}
 		
 		h1, h2, h3{

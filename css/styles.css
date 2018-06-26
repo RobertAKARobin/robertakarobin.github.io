@@ -163,15 +163,25 @@ em {
 
   h1 {
     text-transform: uppercase;
-    color: #006DB3;
+    color: #B26900;
   }
 
   a {
-    color: #009BFF;
+    color: #19A5FF;
     text-decoration: underline;
   }
-  a:hover, a[data-template-active] {
-    color: #FF8E00;
+  a:hover {
+    color: #B26900;
+  }
+  a[data-template-active] {
+    color: #FF9500;
+  }
+
+  .social svg {
+    fill: #009BFF;
+  }
+  .social svg:hover {
+    fill: #B26900;
   }
 }
 @media screen and (min-width: 900px) {
@@ -250,9 +260,11 @@ body.geocities main:after, body.geocities main > section:first-of-type:after {
   margin-bottom: 2em;
 }
 body.geocities main a {
-  color: #0ff;
   display: inline-block;
   position: relative;
+}
+body.geocities main a, body.geocities main a:hover {
+  color: #0ff;
 }
 body.geocities main a:hover {
   animation: backflips 0.4s linear infinite;
@@ -265,7 +277,7 @@ body.geocities main a:before {
   background-image: url(/img/globe.gif);
   vertical-align: middle;
 }
-body.geocities main svg {
+body.geocities main svg, body.geocities main svg:hover {
   fill: #fff;
 }
 body.geocities main h1, body.geocities main h1 + p, body.geocities main h2, body.geocities main h2 + p, body.geocities main h3, body.geocities main h3 + p {
