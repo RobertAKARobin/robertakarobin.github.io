@@ -164,7 +164,8 @@ em{
 		color:#009BFF;
 		text-decoration:underline;
 
-		&:hover{
+		&:hover,
+		&[data-template-active]{
 			color:#FF8E00;
 		}
 	}

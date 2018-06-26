@@ -7,22 +7,45 @@
 	<link href="css/styles.css" rel="stylesheet" />
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
 	<script>
-		document.addEventListener('DOMContentLoaded', onHashChange)
-		window.addEventListener('hashchange', onHashChange)
+		const state = {
+			triggerElements: [],
+			viewName: ''
+		}
 
-		function onHashChange(){
-			let viewName = (location.hash || '').substring(1)
+		document.addEventListener('DOMContentLoaded', ()=>{
+			state.triggerElements = Array.from(document.querySelectorAll('[data-template-triggers] a'))
+			state.triggerElements.forEach((element)=>{
+				element.addEventListener('click', onTemplateTrigger)
+			})
+
+			window.addEventListener('hashchange', onHashChange)
+			onHashChange();
+		})
+
+		function onTemplateTrigger(event){
+			let element = this
+			location.hash = state.viewName = element.textContent.toLowerCase()
+		}
+
+		function onHashChange(event){
 			const allowedViewNames = ['one-pager','extended','geocities']
-			if(!allowedViewNames.includes(viewName)){
-				viewName = allowedViewNames[0]
+			state.viewName = (location.hash || '').substring(1)
+			if(!allowedViewNames.includes(state.viewName)){
+				state.viewName = allowedViewNames[0]
 			}
-			document.querySelector('body').className = viewName
+			document.querySelector('body').className = state.viewName
+			state.triggerElements.forEach(highlightActiveTemplate)
 		}
 
-		function triggerChangeView(element){
-			let viewName = element.textContent.toLowerCase()
-			location.hash = viewName
+		function highlightActiveTemplate(element){
+			let elementTemplateName = element.textContent.toLowerCase()
+			if(elementTemplateName == state.viewName){
+				element.setAttribute('data-template-active', 'true')
+			}else{
+				element.removeAttribute('data-template-active')
+			}
 		}
+
 	</script>
 </head>
 <body class="one-pager">
@@ -237,11 +260,11 @@
 	</main>
 
 	<nav>
-		<ul>
+		<ul data-template-triggers>
 			<li>View as:</li>
-			<li><a onclick="triggerChangeView(this)">One-pager</a></li>
-			<li><a onclick="triggerChangeView(this)">Extended</a></li>
-			<li><a onclick="triggerChangeView(this)">Geocities</a></li>
+			<li><a>One-pager</a></li>
+			<li><a>Extended</a></li>
+			<li><a>GeoCities</a></li>
 		</ul>
 	</nav>
 

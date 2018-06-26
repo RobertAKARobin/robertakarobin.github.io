@@ -167,7 +167,7 @@ em {
     color: #009BFF;
     text-decoration: underline;
   }
-  a:hover {
+  a:hover, a[data-template-active] {
     color: #FF8E00;
   }
 }
