@@ -218,7 +218,9 @@ em {
 body.geocities {
   background-image: url(/img/star.jpg);
   background-color: #000;
-  cursor: url("/img/nyan.png"), progress;
+}
+body.geocities, body.geocities main * {
+  cursor: url("/img/nyan.png"), progress !important;
 }
 body.geocities nav {
   cursor: default !important;
