@@ -27,12 +27,13 @@ $compliment-darker:#B26900;
 	font-family:"Georgia", serif;
 	font-size:15px;
 	line-height:1.8em;
-	width:100%;
+}
+:root, body{
+	width:100vw;
+	max-width:100%;
+	overflow-x:hidden;
 }
 body{
-	width:100%;
-	overflow-x:hidden;
-
 	@each $template in $data-templates{
 		&.#{$template} [data-template]:not([data-template=#{$template}]){
 			display:none;

@@ -20,13 +20,14 @@
   font-family: "Georgia", serif;
   font-size: 15px;
   line-height: 1.8em;
-  width: 100%;
 }
 
-body {
-  width: 100%;
+:root, body {
+  width: 100vw;
+  max-width: 100%;
   overflow-x: hidden;
 }
+
 body.one-pager [data-template]:not([data-template=one-pager]) {
   display: none;
 }
