@@ -22,14 +22,17 @@
 	width:100%;
 }
 body{
+	[data-template]{
+		display:none;
+	}
 	&.extended{
-		[data-template=one-pager]{
-			display:none;
+		[data-template=extended]{
+			display:initial;
 		}
 	}
 	&.one-pager{
-		[data-template=extended]{
-			display:none;
+		[data-template=one-pager]{
+			display:initial;
 		}
 	}
 }
@@ -147,7 +150,9 @@ em{
 		padding-top:3em;
 		padding-bottom:1em;
 	}
-
+	header, aside{
+		text-align:center;
+	}
 	h1{
 		text-transform:uppercase;
 		color:#006DB3;
@@ -159,9 +164,6 @@ em{
 		&:hover{
 			color:#FF8E00;
 		}
-	}
-	header, aside{
-		text-align:center;
 	}
 }
 @media screen and (min-width: 900px){
@@ -190,13 +192,49 @@ em{
 		line-height:1.6em;
 		color:#000;
 	}
+	nav{
+		display:none;
+	}
 	main{
 		padding: 0;
 	}
 	section:last-of-type{
 		margin-bottom:0;
 	}
-	nav{
-		display:none;
+}
+body.geocities > main{
+	font-family: 'Comic Sans MS', cursive;
+	font-size:14px;
+	text-align:center;
+	
+	h1, h2, h3{
+		&, & + p{
+			font-family: 'Papyrus', fantasy;
+			font-size:16px;
+			line-height:2em;
+		}
+		& + p{
+			font-weight:normal;
+		}
+	}
+	h1{
+		font-size:48px;
+		text-transform:none;
+	}
+	h2{
+		font-size:36px;
+		padding:0;
+		border:0;
+	}
+	header{
+		text-align:center;
+	}
+	aside{
+		position:relative;
+		text-align:center;
+	}
+	li:before{
+		position:relative;
+		left:-0.5em;
 	}
 }

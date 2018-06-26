@@ -23,11 +23,14 @@
   width: 100%;
 }
 
-body.extended [data-template=one-pager] {
+body [data-template] {
   display: none;
 }
-body.one-pager [data-template=extended] {
-  display: none;
+body.extended [data-template=extended] {
+  display: initial;
+}
+body.one-pager [data-template=one-pager] {
+  display: initial;
 }
 
 main {
@@ -146,6 +149,10 @@ em {
     padding-bottom: 1em;
   }
 
+  header, aside {
+    text-align: center;
+  }
+
   h1 {
     text-transform: uppercase;
     color: #006DB3;
@@ -157,10 +164,6 @@ em {
   }
   a:hover {
     color: #FF8E00;
-  }
-
-  header, aside {
-    text-align: center;
   }
 }
 @media screen and (min-width: 900px) {
@@ -192,6 +195,10 @@ em {
     color: #000;
   }
 
+  nav {
+    display: none;
+  }
+
   main {
     padding: 0;
   }
@@ -199,8 +206,37 @@ em {
   section:last-of-type {
     margin-bottom: 0;
   }
-
-  nav {
-    display: none;
-  }
+}
+body.geocities > main {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 14px;
+  text-align: center;
+}
+body.geocities > main h1, body.geocities > main h1 + p, body.geocities > main h2, body.geocities > main h2 + p, body.geocities > main h3, body.geocities > main h3 + p {
+  font-family: 'Papyrus', fantasy;
+  font-size: 16px;
+  line-height: 2em;
+}
+body.geocities > main h1 + p, body.geocities > main h2 + p, body.geocities > main h3 + p {
+  font-weight: normal;
+}
+body.geocities > main h1 {
+  font-size: 48px;
+  text-transform: none;
+}
+body.geocities > main h2 {
+  font-size: 36px;
+  padding: 0;
+  border: 0;
+}
+body.geocities > main header {
+  text-align: center;
+}
+body.geocities > main aside {
+  position: relative;
+  text-align: center;
+}
+body.geocities > main li:before {
+  position: relative;
+  left: -0.5em;
 }
