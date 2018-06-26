@@ -291,6 +291,9 @@ body.geocities{
 				vertical-align:middle;
 				background-color:#00f;
 			}
+			& + p{
+				animation:wiggle 0.1s linear infinite;
+			}
 		}
 		h2{
 			font-size:36px;
@@ -298,6 +301,7 @@ body.geocities{
 			border:0;
 			color:#f00;
 			text-decoration:underline;
+			position:relative;
 			animation:glow 1s linear infinite;
 
 			&:before{
@@ -363,5 +367,16 @@ body.geocities{
 	}
 	to{
 		transform:rotateX(360deg);
+	}
+}
+@keyframes wiggle{
+	0%{
+		transform:rotateZ(-1deg);
+	}
+	50%{
+		transform:rotateZ(1deg);
+	}
+	100%{
+		transform:rotateZ(-1deg);
 	}
 }

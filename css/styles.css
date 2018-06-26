@@ -290,12 +290,16 @@ body.geocities main h1:after {
   vertical-align: middle;
   background-color: #00f;
 }
+body.geocities main h1 + p {
+  animation: wiggle 0.1s linear infinite;
+}
 body.geocities main h2 {
   font-size: 36px;
   padding: 0;
   border: 0;
   color: #f00;
   text-decoration: underline;
+  position: relative;
   animation: glow 1s linear infinite;
 }
 body.geocities main h2:before {
@@ -359,5 +363,16 @@ body.geocities main li:before {
   }
   to {
     transform: rotateX(360deg);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: rotateZ(-1deg);
+  }
+  50% {
+    transform: rotateZ(1deg);
+  }
+  100% {
+    transform: rotateZ(-1deg);
   }
 }
