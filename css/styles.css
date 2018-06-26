@@ -155,6 +155,13 @@ em {
     padding-bottom: 1em;
   }
 
+  h3, h3 span {
+    font-style: italic;
+  }
+  h3 span {
+    display: block;
+  }
+
   header, aside {
     text-align: center;
   }
@@ -207,6 +214,13 @@ em {
     top: 0;
     right: 0;
     text-align: right;
+  }
+
+  h3, h3 span {
+    font-style: normal;
+  }
+  h3 span {
+    display: inline;
   }
 }
 @media print {
