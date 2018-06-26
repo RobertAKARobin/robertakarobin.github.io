@@ -30,10 +30,13 @@ body {
 body [data-template] {
   display: none;
 }
+body.one-pager [data-template=one-pager] {
+  display: initial;
+}
 body.extended [data-template=extended] {
   display: initial;
 }
-body.one-pager [data-template=one-pager] {
+body.geocities [data-template=geocities] {
   display: initial;
 }
 
@@ -279,16 +282,7 @@ body.geocities main h1 {
   text-transform: none;
   color: #f00;
   position: relative;
-  animation: blink 1s steps(2) infinite, marquee 3s linear alternate infinite;
-}
-body.geocities main h1:after {
-  content: ' ';
-  display: inline-block;
-  background-image: url(/img/robin.gif);
-  width: 100px;
-  height: 75px;
-  vertical-align: middle;
-  background-color: #00f;
+  animation: blink 0.3s steps(1) infinite, marquee 3s linear alternate infinite;
 }
 body.geocities main h1 + p {
   animation: wiggle 0.1s linear infinite;
@@ -332,7 +326,7 @@ body.geocities main li:before {
     opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0;
   }
   100% {
     opacity: 1;
