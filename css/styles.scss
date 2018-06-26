@@ -24,20 +24,18 @@ $compliment-darker:#B26900;
 }
 
 :root{
-	font-family:"Garamond", "Times New Roman", serif;
-	font-size:18px;
-	line-height:1.6em;
+	font-family:"Georgia", serif;
+	font-size:15px;
+	line-height:1.8em;
 	width:100%;
 }
 body{
 	width:100%;
 	overflow-x:hidden;
-	[data-template]{
-		display:none;
-	}
+
 	@each $template in $data-templates{
-		&.#{$template} [data-template=#{$template}]{
-			display:initial;
+		&.#{$template} [data-template]:not([data-template=#{$template}]){
+			display:none;
 		}
 	}
 }
@@ -75,6 +73,7 @@ nav{
 main li{
 	position:relative;
 	padding-left:1em;
+
 	&:before{
 		display:inline-block;
 		position:absolute;
@@ -161,23 +160,23 @@ em{
 	}
 	h1{
 		text-transform:uppercase;
-		color:$compliment-darker;
+		color:$compliment;
 	}
 	a{
 		color:$main;
 		text-decoration:underline;
 
 		&:hover{
-			color:$compliment-darker;
+			color:$compliment;
 		}
 		&[data-template-active]{
-			color:$compliment;
+			color:$compliment-darker;
 		}
 	}
 	.social svg{
 		fill:$main-darker;
 		&:hover{
-			fill:$compliment-darker;
+			fill:$compliment;
 		}
 	}
 }
@@ -191,6 +190,10 @@ em{
 	}
 }
 @media print, screen and (min-width: 900px){
+	:root{
+		font-size:16px;
+		line-height:1.9em;
+	}
 	header{
 		text-align:left;
 	}
@@ -203,9 +206,9 @@ em{
 }
 @media print{
 	:root{
+		color:#000;
 		font-size:14px;
 		line-height:1.6em;
-		color:#000;
 	}
 	nav{
 		display:none;

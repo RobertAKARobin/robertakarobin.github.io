@@ -17,9 +17,9 @@
 }
 
 :root {
-  font-family: "Garamond", "Times New Roman", serif;
-  font-size: 18px;
-  line-height: 1.6em;
+  font-family: "Georgia", serif;
+  font-size: 15px;
+  line-height: 1.8em;
   width: 100%;
 }
 
@@ -27,17 +27,14 @@ body {
   width: 100%;
   overflow-x: hidden;
 }
-body [data-template] {
+body.one-pager [data-template]:not([data-template=one-pager]) {
   display: none;
 }
-body.one-pager [data-template=one-pager] {
-  display: initial;
+body.extended [data-template]:not([data-template=extended]) {
+  display: none;
 }
-body.extended [data-template=extended] {
-  display: initial;
-}
-body.geocities [data-template=geocities] {
-  display: initial;
+body.geocities [data-template]:not([data-template=geocities]) {
+  display: none;
 }
 
 main {
@@ -163,7 +160,7 @@ em {
 
   h1 {
     text-transform: uppercase;
-    color: #B26900;
+    color: #FF9500;
   }
 
   a {
@@ -171,17 +168,17 @@ em {
     text-decoration: underline;
   }
   a:hover {
-    color: #B26900;
+    color: #FF9500;
   }
   a[data-template-active] {
-    color: #FF9500;
+    color: #B26900;
   }
 
   .social svg {
     fill: #009BFF;
   }
   .social svg:hover {
-    fill: #B26900;
+    fill: #FF9500;
   }
 }
 @media screen and (min-width: 900px) {
@@ -195,6 +192,11 @@ em {
   }
 }
 @media print, screen and (min-width: 900px) {
+  :root {
+    font-size: 16px;
+    line-height: 1.9em;
+  }
+
   header {
     text-align: left;
   }
@@ -208,9 +210,9 @@ em {
 }
 @media print {
   :root {
+    color: #000;
     font-size: 14px;
     line-height: 1.6em;
-    color: #000;
   }
 
   nav {
