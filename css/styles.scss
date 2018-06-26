@@ -22,10 +22,6 @@
 	width:100%;
 }
 body{
-	position:relative;
-	margin-left:auto;
-	margin-right:auto;
-
 	&.extended{
 		[data-template=one-pager]{
 			display:none;
@@ -36,6 +32,11 @@ body{
 			display:none;
 		}
 	}
+}
+main{
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
 }
 section{
 	position:relative;
@@ -63,7 +64,7 @@ nav{
 	}
 }
 
-section li{
+main li{
 	position:relative;
 	padding-left:1em;
 	&:before{
@@ -132,7 +133,7 @@ em{
 	:root{
 		color:#292929;
 	}
-	body{
+	main{
 		padding:1em;
 		margin-top:3em;
 	}
@@ -164,7 +165,7 @@ em{
 	}
 }
 @media screen and (min-width: 900px){
-	body{
+	main{
 		width:850px;
 	}
 	nav ul{
@@ -189,7 +190,7 @@ em{
 		line-height:1.6em;
 		color:#000;
 	}
-	body{
+	main{
 		padding: 0;
 	}
 	section:last-of-type{
