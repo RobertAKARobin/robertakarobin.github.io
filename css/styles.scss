@@ -324,7 +324,7 @@ body.geocities{
 			animation:blink 0.3s steps(1) infinite, marquee 3s linear alternate infinite;
 
 			& + p{
-				animation:wiggle 0.1s linear infinite;
+				animation:wiggle 0.5s steps(1) infinite;
 			}
 		}
 		h2{
@@ -334,7 +334,7 @@ body.geocities{
 			color:#f00;
 			text-decoration:underline;
 			position:relative;
-			animation:glow 1s linear infinite;
+			animation:glow 1s steps(2) infinite;
 
 			&:before{
 				content:' ';
