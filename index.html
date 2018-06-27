@@ -7,39 +7,59 @@
 	<link href="css/styles.css" rel="stylesheet" />
 	<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
 	<script>
-		const state = {
+		const template = {
 			triggerElements: [],
-			viewName: ''
+			viewName: '',
+		}
+		const konami = {
+			keystring: '',
+			event: new Event('konami'),
+			sequence: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65].join('.') + '.'
 		}
 
 		document.addEventListener('DOMContentLoaded', ()=>{
-			state.triggerElements = Array.from(document.querySelectorAll('[data-template-triggers] a'))
-			state.triggerElements.forEach((element)=>{
+			template.triggerElements = Array.from(document.querySelectorAll('[data-template-triggers] a'))
+			template.triggerElements.forEach((element)=>{
 				element.addEventListener('click', onTemplateTrigger)
 			})
 
 			window.addEventListener('hashchange', onHashChange)
 			onHashChange()
+			
+			window.addEventListener('keyup', konamiListener)
+			window.addEventListener('konami', function(event){
+				console.log('Konami!')
+			})
 		})
+
+		function konamiListener(event){
+			konami.keystring += (event.keyCode + '.')
+			if(konami.sequence.indexOf(konami.keystring) < 0){
+				konami.keystring = ''
+			}else if(konami.keystring == konami.sequence){
+				konami.keystring = ''
+				window.dispatchEvent(konami.event)
+			}
+		}
 
 		function onTemplateTrigger(event){
 			let element = this
-			location.hash = state.viewName = element.textContent.toLowerCase()
+			location.hash = template.viewName = element.textContent.toLowerCase()
 		}
 
 		function onHashChange(event){
 			const allowedViewNames = ['one-pager','extended','geocities']
-			state.viewName = (location.hash || '').substring(1)
-			if(!allowedViewNames.includes(state.viewName)){
-				state.viewName = allowedViewNames[0]
+			template.viewName = (location.hash || '').substring(1)
+			if(!allowedViewNames.includes(template.viewName)){
+				template.viewName = allowedViewNames[0]
 			}
-			document.querySelector('body').className = state.viewName
-			state.triggerElements.forEach(highlightActiveTemplate)
+			document.querySelector('body').className = template.viewName
+			template.triggerElements.forEach(highlightActiveTemplate)
 		}
 
 		function highlightActiveTemplate(element){
 			let elementTemplateName = element.textContent.toLowerCase()
-			if(elementTemplateName == state.viewName){
+			if(elementTemplateName == template.viewName){
 				element.setAttribute('data-template-active', 'true')
 			}else{
 				element.removeAttribute('data-template-active')
