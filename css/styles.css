@@ -181,6 +181,9 @@ em {
   a[data-template-active] {
     color: #B26900;
   }
+  a[data-template-active]:hover {
+    color: #FF9500;
+  }
 
   .social svg {
     fill: #009BFF;

@@ -180,6 +180,9 @@ em{
 		}
 		&[data-template-active]{
 			color:$compliment-darker;
+			&:hover{
+				color:$compliment;
+			}
 		}
 	}
 	.social svg{
