@@ -27,9 +27,9 @@
 			onHashChange()
 			
 			window.addEventListener('keyup', konamiListener)
-			window.addEventListener('konami', function(event){
-				console.log('Konami!')
-			})
+			window.addEventListener('konami', iNeedAPrompt)
+
+			document.querySelector('[data-prompt]').addEventListener('click', iNoLongerNeedAPrompt)
 		})
 
 		function konamiListener(event){
@@ -39,6 +39,36 @@
 			}else if(konami.keystring == konami.sequence){
 				konami.keystring = ''
 				window.dispatchEvent(konami.event)
+			}
+		}
+
+		function iNeedAPrompt(event){
+			let xhr = new XMLHttpRequest()
+			xhr.open('GET', 'https://ineedaprompt.com/api')
+			xhr.send()
+			xhr.onreadystatechange = ()=>{
+				if(xhr.readyState === 4 && xhr.status === 200){
+					try{
+						iGotAPrompt(JSON.parse(xhr.responseText))
+					}catch(e){
+						console.dir(xhr)
+					}
+				}
+			}
+		}
+
+		function iGotAPrompt(promptJSON){
+			let promptWrapper = document.querySelector('[data-prompt]')
+			let promptText = document.querySelector('[data-prompt-text]')
+			promptText.textContent = `Prompt #${promptJSON.count}: ${promptJSON.english}`
+			promptWrapper.style.display = ''
+		}
+
+		function iNoLongerNeedAPrompt(event){
+			if(event.target.tagName !== 'A'){
+				let promptWrapper = document.querySelector('[data-prompt]')
+				let promptText = document.querySelector('[data-prompt-text]')
+				promptWrapper.style.display = 'none'
 			}
 		}
 
@@ -126,7 +156,7 @@
 				</aside>
 
 				<ul>
-					<li data-template="one-pager">Product development, business analysis, and pre-sales for enterprises and start-ups across multiple verticals.</li>
+					<li data-template="one-pager">Product owner, business analyst, and pre-sales for enterprises and start-ups across multiple verticals.</li>
 					<li>$500K+ in accounts closed during Q1 and Q2 of 2018.</li>
 					<li data-template="one-pager">$20K+ per year saved through internal Salesforce and Hubspot development.</li>
 					<li data-template="one-pager">Developed company-wide tool to estimate software development costs.</li>
@@ -274,7 +304,7 @@
 
 			<ul>
 				<li>Built <a href="http://repotagger.github.io/">RepoTagger</a>, an Angular.js app that allows sorts and tags of repos via the GitHub API.</li>
-				<li>Built <a href="http://ineedaprompt.com">INeedAPrompt.com</a>, a Node.js web app, also deployed as an Amazon Alexa skill.</li>
+				<li>Built <a href="https://ineedaprompt.com">INeedAPrompt.com</a>, a Node.js web app, also deployed as an Amazon Alexa skill.</li>
 				<li>Interests include 3D modeling and printing, laser-cutting, singing a cappella, being a loving father &amp; husband.</li>
 			</ul>
 		</section>
@@ -288,6 +318,10 @@
 			<li><a>GeoCities</a></li>
 		</ul>
 	</nav>
+
+	<div data-prompt style="display:none">
+		<a data-prompt-text href="https://ineedaprompt.com"></a>
+	</div>
 
 </body>
 </html>
