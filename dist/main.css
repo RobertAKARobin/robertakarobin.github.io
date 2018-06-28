@@ -31,9 +31,11 @@
 body.one-pager [data-template]:not([data-template=one-pager]) {
   display: none;
 }
+
 body.extended [data-template]:not([data-template=extended]) {
   display: none;
 }
+
 body.geocities [data-template]:not([data-template=geocities]) {
   display: none;
 }
@@ -59,9 +61,11 @@ nav {
   opacity: 0.9;
   transition: 0.1s opacity;
 }
+
 nav:hover {
   opacity: 1;
 }
+
 nav ul {
   margin: 0 auto;
   display: flex;
@@ -73,12 +77,14 @@ main li {
   position: relative;
   padding-left: 1em;
 }
+
 main li:before {
   display: inline-block;
   position: absolute;
   left: 0;
   content: "\2022";
 }
+
 main li li:before {
   content: "-";
 }
@@ -92,6 +98,7 @@ h1 {
   font-weight: bold;
   text-decoration: underline;
 }
+
 h1 + p {
   font-weight: bold;
 }
@@ -107,6 +114,7 @@ h3 a {
   font-weight: bold;
   text-decoration: underline;
 }
+
 h3 + p {
   font-weight: bold;
 }
@@ -126,6 +134,7 @@ em {
 .social a {
   text-decoration: none;
 }
+
 .social svg {
   height: 1.6em;
   vertical-align: bottom;
@@ -136,41 +145,33 @@ em {
   :root {
     color: #292929;
   }
-
   main {
     padding: 1em;
     margin-top: 3em;
   }
-
   nav ul {
     padding: 0 1em;
   }
-
   section {
     margin-bottom: 4em;
   }
-
   h2 {
     padding-top: 3em;
     padding-bottom: 1em;
   }
-
   h3, h3 span {
     font-style: italic;
   }
   h3 span {
     display: block;
   }
-
   header, aside {
     text-align: center;
   }
-
   h1 {
     text-transform: uppercase;
     color: #FF9500;
   }
-
   a {
     color: #19A5FF;
     text-decoration: underline;
@@ -184,7 +185,6 @@ em {
   a[data-template-active]:hover {
     color: #FF9500;
   }
-
   .social svg {
     fill: #009BFF;
   }
@@ -192,33 +192,31 @@ em {
     fill: #FF9500;
   }
 }
+
 @media screen and (min-width: 900px) {
   main {
     width: 850px;
   }
-
   nav ul {
     width: 850px;
     margin: 0 auto;
   }
 }
+
 @media print, screen and (min-width: 900px) {
   :root {
     font-size: 16px;
     line-height: 1.9em;
   }
-
   header {
     text-align: left;
   }
-
   aside {
     position: absolute;
     top: 0;
     right: 0;
     text-align: right;
   }
-
   h3, h3 span {
     font-style: normal;
   }
@@ -226,42 +224,45 @@ em {
     display: inline;
   }
 }
+
 @media print {
   :root {
     color: #000;
     font-size: 14px;
     line-height: 1.6em;
   }
-
   nav {
     display: none;
   }
-
   main {
     padding: 0;
   }
-
   section:last-of-type {
     margin-bottom: 0;
   }
 }
+
 body.geocities {
   background-image: url(/img/star.jpg);
   background-position: fixed;
   background-color: #000;
 }
+
 body.geocities, body.geocities main * {
   cursor: url("/img/nyan.png"), progress !important;
 }
+
 body.geocities nav {
   cursor: default !important;
 }
+
 body.geocities main {
   font-family: 'Comic Sans MS', cursive;
   font-size: 14px;
   text-align: center;
   color: #fff;
 }
+
 body.geocities main:before {
   content: ' ';
   display: block;
@@ -272,7 +273,9 @@ body.geocities main:before {
   width: 300px;
   height: 300px;
 }
-body.geocities main:after, body.geocities main > section:first-of-type:after {
+
+body.geocities main:after,
+body.geocities main > section:first-of-type:after {
   content: ' ';
   display: block;
   background-image: url(/img/fire.gif);
@@ -280,16 +283,20 @@ body.geocities main:after, body.geocities main > section:first-of-type:after {
   width: 100%;
   margin-bottom: 2em;
 }
+
 body.geocities main a {
   display: inline-block;
   position: relative;
 }
+
 body.geocities main a, body.geocities main a:hover {
   color: #0ff;
 }
+
 body.geocities main a:hover {
   animation: backflips 0.4s linear infinite;
 }
+
 body.geocities main a:before {
   content: ' ';
   display: inline-block;
@@ -298,18 +305,22 @@ body.geocities main a:before {
   background-image: url(/img/globe.gif);
   vertical-align: middle;
 }
+
 body.geocities main svg, body.geocities main svg:hover {
   fill: #fff;
 }
+
 body.geocities main h1, body.geocities main h1 + p, body.geocities main h2, body.geocities main h2 + p, body.geocities main h3, body.geocities main h3 + p {
   font-family: 'Papyrus', fantasy;
   font-size: 16px;
   line-height: 2em;
   color: #0f0;
 }
+
 body.geocities main h1 + p, body.geocities main h2 + p, body.geocities main h3 + p {
   font-weight: normal;
 }
+
 body.geocities main h1 {
   font-size: 48px;
   line-height: 54px;
@@ -319,9 +330,11 @@ body.geocities main h1 {
   position: relative;
   animation: blink 0.3s steps(1) infinite, marquee 3s linear alternate infinite;
 }
+
 body.geocities main h1 + p {
   animation: wiggle 0.5s steps(1) infinite;
 }
+
 body.geocities main h2 {
   font-size: 36px;
   padding: 0;
@@ -331,6 +344,7 @@ body.geocities main h2 {
   position: relative;
   animation: glow 1s steps(2) infinite;
 }
+
 body.geocities main h2:before {
   content: ' ';
   background-image: url(/img/bar.gif);
@@ -339,13 +353,16 @@ body.geocities main h2:before {
   height: 10px;
   background-repeat: repeat-x;
 }
+
 body.geocities main header {
   text-align: center;
 }
+
 body.geocities main aside {
   position: relative;
   text-align: center;
 }
+
 body.geocities main li:before {
   content: ' ';
   position: relative;
@@ -370,6 +387,7 @@ body.geocities main li:before {
   align-items: center;
   background-color: rgba(255, 255, 255, 0.8);
 }
+
 [data-prompt] [data-prompt-text] {
   display: block;
   text-align: center;
@@ -393,6 +411,7 @@ body.geocities main li:before {
     opacity: 1;
   }
 }
+
 @keyframes glow {
   0% {
     color: #f00;
@@ -404,6 +423,7 @@ body.geocities main li:before {
     color: #f00;
   }
 }
+
 @keyframes marquee {
   from {
     left: -50%;
@@ -412,6 +432,7 @@ body.geocities main li:before {
     left: 50%;
   }
 }
+
 @keyframes backflips {
   from {
     transform: rotateX(0deg);
@@ -420,6 +441,7 @@ body.geocities main li:before {
     transform: rotateX(360deg);
   }
 }
+
 @keyframes wiggle {
   0% {
     transform: rotateZ(-1deg);
@@ -431,3 +453,4 @@ body.geocities main li:before {
     transform: rotateZ(-1deg);
   }
 }
+
