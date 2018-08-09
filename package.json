@@ -7,8 +7,8 @@
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production",
     "serve": "npx http-server .",
-    "start:dev": "npm run-script build:dev --watch & npm run-script serve",
-    "start": "npm run-script build:prod --watch & npm run-script serve"
+    "start:dev": "npm run-script build:dev -- --watch & npm run-script serve",
+    "start": "npm run-script build:prod -- --watch & npm run-script serve"
   },
   "repository": {
     "type": "git",
