@@ -1,7 +1,7 @@
 const konami = {
-	keystring: '',
 	event: new Event('konami'),
-	sequence: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65].join('.') + '.'
+	input: [],
+	sequence: [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 
 function konamiListener(event){
-	konami.keystring += (event.keyCode + '.')
-	if(konami.sequence.indexOf(konami.keystring) < 0){
-		konami.keystring = ''
-	}else if(konami.keystring == konami.sequence){
-		konami.keystring = ''
+	konami.input.push(event.keyCode)
+	let inputString = konami.input.join('.'),
+		sequenceString = konami.sequence.join('.')
+	if(sequenceString.indexOf(inputString) < 0){
+		konami.input = []
+	}else if(sequenceString == inputString){
+		konami.input = []
 		window.dispatchEvent(konami.event)
 	}
 }
