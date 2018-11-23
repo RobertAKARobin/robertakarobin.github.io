@@ -141,6 +141,40 @@ em {
   fill: #000;
 }
 
+.github-link {
+  display: block;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -100px;
+  width: 200px;
+  height: 50px;
+  transform: rotateZ(45deg);
+  transform-origin: 100px 0px;
+  background-color: #19A5FF;
+  opacity: 0.15;
+}
+
+.github-link:hover {
+  opacity: 1;
+}
+
+@media print {
+  .github-link {
+    display: none;
+  }
+}
+
+.github-link svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  width: 30px;
+  height: 30px;
+  fill: #fff;
+}
+
 @media screen {
   :root {
     color: #292929;
@@ -254,6 +288,10 @@ body.geocities, body.geocities main * {
 
 body.geocities nav {
   cursor: default !important;
+}
+
+body.geocities .github-link {
+  display: none;
 }
 
 body.geocities main {

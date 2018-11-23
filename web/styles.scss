@@ -138,6 +138,42 @@ em{
 		fill:#000;
 	}
 }
+$diag-width:200px;
+$diag-height:50px;
+$diag-icon-width:30px;
+.github-link{
+	display:block;
+	position:fixed;
+	z-index:999;
+
+	top:0;
+	right:-($diag-width/2);
+	width:$diag-width;
+	height:$diag-height;
+	transform:rotateZ(45deg);
+	transform-origin:100px 0px;
+
+	background-color:$main;
+	opacity:0.15;
+	&:hover{
+		opacity:1;
+	}
+	@media print{
+		&{
+			display:none;
+		}
+	}
+
+	svg{
+		display:block;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: ($diag-height - $diag-icon-width) - 5px;
+		width:$diag-icon-width;
+		height:$diag-icon-width;
+		fill:#fff;
+	}
+}
 @media screen{
 	:root{
 		color:#292929;
@@ -251,6 +287,9 @@ body.geocities{
 
 	nav{
 		cursor:default !important;
+	}
+	.github-link{
+		display:none;
 	}
 
 	main{
