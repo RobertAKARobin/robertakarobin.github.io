@@ -3,6 +3,7 @@ const sass = require('gulp-sass')
 const concat = require('gulp-concat')
 const replace = require('gulp-replace')
 const uglify = require('gulp-uglify-es').default
+const uglifyCSS = require('gulp-uglifycss')
 const dateformat = require('dateformat')
 const del = require('del')
 const ENV = {}
@@ -40,6 +41,7 @@ gulp.task('build-css', ()=>{
 		sourceMap: 'non'
 	}))
 	.pipe(insertEnv())
+	.pipe(uglifyCSS())
 	.pipe(concat(`main-${ENV.cachebuster}.css`))
 	.pipe(gulp.dest('./dist'))
 })
