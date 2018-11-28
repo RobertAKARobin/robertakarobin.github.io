@@ -4,6 +4,7 @@ const concat = require('gulp-concat')
 const replace = require('gulp-replace')
 const uglify = require('gulp-uglify-es').default
 const uglifyCSS = require('gulp-uglifycss')
+const htmlmin = require('gulp-htmlmin')
 const dateformat = require('dateformat')
 const del = require('del')
 const ENV = {}
@@ -48,9 +49,12 @@ gulp.task('build-css', ()=>{
 
 gulp.task('build-html', ()=>{
 	return gulp.src([
-		'./web/*.html'
+		'./web/index.html'
 	])
 	.pipe(insertEnv())
+	.pipe(htmlmin({
+		collapseWhitespace: true
+	}))
 	.pipe(gulp.dest('.'))
 })
 
