@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "npx gulp build",
-    "build:watch": "npx gulp --silent watch",
+    "build:watch": "npx gulp watch",
     "serve": "npx http-server . -s",
     "start": "npm run build:watch & npm run serve"
   },
@@ -25,6 +25,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
+    "gulp-uglify-es": "^1.0.4",
     "http-server": "^0.11.1"
   }
 }

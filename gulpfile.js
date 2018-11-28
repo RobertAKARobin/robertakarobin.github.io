@@ -2,6 +2,7 @@ const gulp = require('gulp')
 const sass = require('gulp-sass')
 const concat = require('gulp-concat')
 const replace = require('gulp-replace')
+const uglify = require('gulp-uglify-es').default
 const dateformat = require('dateformat')
 const del = require('del')
 const ENV = {}
@@ -22,18 +23,17 @@ gulp.task('clean', ()=>{
 
 gulp.task('build-js', ()=>{
 	return gulp.src([
-		'./web/konami.js',
-		'./web/templates.js',
-		'./web/ineedaprompt.js'
+		'./web/*.js'
 	])
 	.pipe(insertEnv())
+	.pipe(uglify())
 	.pipe(concat(`main-${ENV.cachebuster}.js`))
 	.pipe(gulp.dest('./dist'))
 })
 
 gulp.task('build-css', ()=>{
 	return gulp.src([
-		'./web/styles.scss'
+		'./web/*.scss'
 	])
 	.pipe(sass({
 		outputStyle: 'expanded',
