@@ -326,6 +326,7 @@ body.geocities{
 			&:hover,
 			&:hover svg{
 				animation:glow 0.4s linear infinite;
+				cursor:url('/img/magnifyer.png'),pointer !important;
 			}
 			&:before{
 				content:' ';
