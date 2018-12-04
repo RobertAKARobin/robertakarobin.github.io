@@ -154,7 +154,7 @@ $diag-icon-width:30px;
 	transform-origin:100px 0px;
 
 	background-color:$main;
-	opacity:0.15;
+	opacity:0.5;
 	&:hover{
 		opacity:1;
 	}
@@ -284,12 +284,19 @@ body.geocities{
 	&, main *{
 		cursor:url('/img/nyan.png'),progress !important;
 	}
+	&:before{
+		content:' ';
+		display:block;
+		position:absolute;
+		top:0;
+		right:0;
+		background-image:url(/img/lensflare.png);
+		width:300px;
+		height:300px;
+	}
 
 	nav{
 		cursor:default !important;
-	}
-	.github-link{
-		display:none;
 	}
 
 	main{
@@ -298,16 +305,6 @@ body.geocities{
 		text-align:center;
 		color:#fff;
 
-		&:before{
-			content:' ';
-			display:block;
-			position:fixed;
-			top:0;
-			right:0;
-			background-image:url(/img/lensflare.png);
-			width:300px;
-			height:300px;
-		}
 		&:after,
 		& > section:first-of-type:after{
 			content:' ';
