@@ -319,14 +319,13 @@ body.geocities{
 		}
 
 		a{
-			&, &:hover{
-				color:#0ff;
-			}
 			display:inline-block;
 			position:relative;
+			color:#0ff;
 			
-			&:hover{
-				animation:backflips 0.4s linear infinite;
+			&:hover,
+			&:hover svg{
+				animation:glow 0.4s linear infinite;
 			}
 			&:before{
 				content:' ';
@@ -335,6 +334,9 @@ body.geocities{
 				height:24px;
 				background-image:url(/img/globe.gif);
 				vertical-align:middle;
+			}
+			&:hover:before{
+				animation:backflips 0.8s linear infinite;
 			}
 		}
 		svg{
@@ -445,12 +447,15 @@ body.geocities{
 @keyframes glow{
 	0%{
 		color:#f00;
+		fill:#f00;
 	}
 	50%{
 		color:#ff0;
+		fill:#ff0;
 	}
 	100%{
 		color:#f00;
+		fill:#f00;
 	}
 }
 @keyframes marquee{
