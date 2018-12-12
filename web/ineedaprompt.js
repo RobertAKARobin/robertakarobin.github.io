@@ -24,13 +24,13 @@
 		let promptWrapper = document.querySelector('[data-prompt]')
 		let promptText = document.querySelector('[data-prompt-text]')
 		promptText.textContent = `Prompt #${promptJSON.count}: ${promptJSON.english}`
-		promptWrapper.style.display = ''
+		promptWrapper.classList.add('active')
 	}
 
 	function iNoLongerNeedAPrompt(event){
 		if(event.target.tagName !== 'A'){
 			let promptWrapper = document.querySelector('[data-prompt]')
-			promptWrapper.style.display = 'none'
+			promptWrapper.classList.remove('active')
 		}
 	}
 })();

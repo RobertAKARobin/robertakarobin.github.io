@@ -412,7 +412,12 @@ body.geocities{
 	left:0;
 	z-index:100;
 
-	display:flex;
+	&.active{
+		display:flex;
+	}
+	&:not(.active){
+		display:none;
+	}
 	flex-direction:column;
 	justify-content:center;
 	align-items:center;
