@@ -1,43 +1,25 @@
 (function(){
 	'use strict'
-	const template = {
-		triggerElements: [],
-		viewName: '',
+
+	function setTriggers(triggerAttribute, destinationAttribute){
+		const triggerElements = document.querySelectorAll(`[${triggerAttribute}]`)
+		for(let element of triggerElements){
+			element.addEventListener('click', clickHandler)
+		}
+
+		function clickHandler(event){
+			const clickedElement = event.target
+			const triggerValue = clickedElement.getAttribute(triggerAttribute)
+			document.querySelector('body').setAttribute(destinationAttribute, triggerValue)
+			for(let element of triggerElements){
+				element.removeAttribute('data-active-trigger')
+			}
+			clickedElement.setAttribute('data-active-trigger', 1)
+		}
 	}
 
 	document.addEventListener('DOMContentLoaded', ()=>{
-		template.triggerElements = Array.from(document.querySelectorAll('[data-template-triggers] a'))
-		template.triggerElements.forEach((element)=>{
-			element.addEventListener('click', onTemplateTrigger)
-		})
-
-		window.addEventListener('hashchange', onHashChange)
-		onHashChange()
+		setTriggers('data-content-trigger', 'data-active-content')
+		setTriggers('data-style-trigger', 'data-active-style')
 	})
-
-
-
-	function onTemplateTrigger(event){
-		let element = this
-		location.hash = template.viewName = element.textContent.toLowerCase()
-	}
-
-	function onHashChange(event){
-		const allowedViewNames = ['one-pager','extended','geocities']
-		template.viewName = (location.hash || '').substring(1)
-		if(!allowedViewNames.includes(template.viewName)){
-			template.viewName = allowedViewNames[0]
-		}
-		document.querySelector('body').className = template.viewName
-		template.triggerElements.forEach(highlightActiveTemplate)
-	}
-
-	function highlightActiveTemplate(element){
-		let elementTemplateName = element.textContent.toLowerCase()
-		if(elementTemplateName == template.viewName){
-			element.setAttribute('data-template-active', 'true')
-		}else{
-			element.removeAttribute('data-template-active')
-		}
-	}
 })();

@@ -1,4 +1,5 @@
-$data-templates: one-pager extended geocities;
+$data-content-names: resume cv;
+$data-style-names: business geocities;
 
 $main:#19A5FF;
 $main-darker:#009BFF;
@@ -34,8 +35,13 @@ $compliment-darker:#B26900;
 	overflow-x:hidden;
 }
 body{
-	@each $template in $data-templates{
-		&.#{$template} [data-template]:not([data-template=#{$template}]){
+	@each $content-name in $data-content-names{
+		&[data-active-content=#{$content-name}] [data-if-content]:not([data-if-content=#{$content-name}]){
+			display:none;
+		}
+	}
+	@each $style-name in $data-style-names{
+		&[data-active-style=#{$style-name}] [data-if-style]:not([data-if-style=#{$style-name}]){
 			display:none;
 		}
 	}
@@ -214,7 +220,7 @@ $diag-icon-width:30px;
 		&:hover{
 			color:$compliment;
 		}
-		&[data-template-active]{
+		&[data-active-trigger]{
 			color:$compliment-darker;
 			&:hover{
 				color:$compliment;
@@ -276,7 +282,7 @@ $diag-icon-width:30px;
 		margin-bottom:0;
 	}
 }
-body.geocities{
+body[data-active-style=geocities]{
 	background-image:url(/img/star.jpg);
 	background-position:fixed;
 	background-color:#000;

@@ -8,7 +8,7 @@
 	<link href="./dist/main-$cachebuster$.css" rel="stylesheet" />
 	<script defer src="./dist/main-$cachebuster$.js"></script>
 </head>
-<body class="one-pager">
+<body data-active-content="resume" data-active-style="business">
 
 	<main>
 		<section>
@@ -46,7 +46,7 @@
 					</p>
 				</address>
 			</aside>
-			<img data-template="geocities" alt="Robin" src="/img/robin.gif" />
+			<img data-if-style="geocities" alt="Robin" src="/img/robin.gif" />
 		</section>
 
 		<section>
@@ -84,16 +84,16 @@
 				</aside>
 
 				<ul>
-					<li data-template="one-pager">Product owner, business analyst, and pre-sales for enterprises and start-ups across multiple verticals.</li>
+					<li data-if-content="resume">Product owner, business analyst, and pre-sales for enterprises and start-ups across multiple verticals.</li>
 					<li>$500K+ in accounts closed during Q1 and Q2 of 2018.</li>
-					<li data-template="one-pager">$20K+ per year saved through internal Salesforce and Hubspot development.</li>
-					<li data-template="one-pager">Developed company-wide tool to estimate software development costs.</li>
-					<li data-template="extended">Contributed several <a href="https://mentormate.com/team/robin-thomas/">blog posts</a> to company website on technical business strategy.</li>
-					<li data-template="extended">Lead multiple internal workshops to educate coworkers on APIs, blockchain, back-end vs front-end, and more.</li>
+					<li data-if-content="resume">$20K+ per year saved through internal Salesforce and Hubspot development.</li>
+					<li data-if-content="resume">Developed company-wide tool to estimate software development costs.</li>
+					<li data-if-content="cv">Contributed several <a href="https://mentormate.com/team/robin-thomas/">blog posts</a> to company website on technical business strategy.</li>
+					<li data-if-content="cv">Lead multiple internal workshops to educate coworkers on APIs, blockchain, back-end vs front-end, and more.</li>
 				</ul>
 
-				<h4 data-template="extended">Notable projects:</h4>
-				<ul data-template="extended">
+				<h4 data-if-content="cv">Notable projects:</h4>
+				<ul data-if-content="cv">
 					<li>
 						<p><em>In medicine &amp; genetics:</em></p>
 						<ul>
@@ -142,9 +142,9 @@
 					<li>Wrote and lead-taught thousands of hours of classes in JavaScript, Ruby, PHP, SQL, Git, CSS, and other technologies.</li>
 					<li>90% success rate in coaching 100s of adults to become fully-qualified web developers.</li>
 					<li>Among highest-rated instructors across 5 cohorts.</li>
-					<li data-template="extended">Built a robust web app to capture and visualize data related to student attendance and assignments.</li>
-					<li data-template="extended">Collaborated with other instructors to define requirements for and develop a Ruby on Rails-based platform for gathering and visualizing data regarding student attendance and assignments. Provided the inspiration for software rolled out company-wide.</li>
-					<li data-template="extended">Conducted ideation and requirements-gathering sessions for many student projects, several of which became publicly-used web apps.</li>
+					<li data-if-content="cv">Built a robust web app to capture and visualize data related to student attendance and assignments.</li>
+					<li data-if-content="cv">Collaborated with other instructors to define requirements for and develop a Ruby on Rails-based platform for gathering and visualizing data regarding student attendance and assignments. Provided the inspiration for software rolled out company-wide.</li>
+					<li data-if-content="cv">Conducted ideation and requirements-gathering sessions for many student projects, several of which became publicly-used web apps.</li>
 				</ul>
 			</section>
 
@@ -159,7 +159,7 @@
 						<time datetime="2014-11-01">September 2014 &mdash; March 2015</time>
 					</aside>
 	
-					<ul data-template="extended">
+					<ul data-if-content="cv">
 						<li>Built a VisualForce / Apex and JavaScript interface to search job applicant records via SOSL and SOQL.</li>
 					</ul>
 				</section>
@@ -177,8 +177,8 @@
 				
 				<ul>
 					<li>Technical lead for corporations accepting Bitcoin, including Expedia and Dish Network.</li>
-					<li data-template="extended">Gathered requirements for new integrations and served as primary manager of external stakeholders in implementing the new integrations.</li>
-					<li data-template="extended">Wrote extensive API documentation for PHP developers.</li>
+					<li data-if-content="cv">Gathered requirements for new integrations and served as primary manager of external stakeholders in implementing the new integrations.</li>
+					<li data-if-content="cv">Wrote extensive API documentation for PHP developers.</li>
 				</ul>
 			</section>
 
@@ -195,8 +195,8 @@
 
 				<ul>
 					<li>Featured in <a href="https://techcrunch.com/2012/04/18/the-noteboard-is-an-amazing-10-foldable-pocket-whiteboard/">TechCrunch</a>, <a href="https://www.youtube.com/watch?v=tVmvewyqVj4">ThinkGeek</a>, <a href="http://www.huffingtonpost.com/2012/05/02/rgft-noteboard-dry-erase-board_n_1471751.html">Huffington Post</a>, and <a href="https://www.entrepreneur.com/slideshow/225135">Entrepreneur</a>.</li>
-					<li data-template="extended">Sourced domestic and overseas manufacturers and supply chain providers.</li>
-					<li data-template="extended">Built a web platform through which customers could customize their orders and secure bulk discounts, integrated with the PayPal API.</li>
+					<li data-if-content="cv">Sourced domestic and overseas manufacturers and supply chain providers.</li>
+					<li data-if-content="cv">Built a web platform through which customers could customize their orders and secure bulk discounts, integrated with the PayPal API.</li>
 					<li>$130K in revenue generated before selling entirety of business to new owners.</li>
 				</ul>
 			</section>
@@ -239,11 +239,11 @@
 	</main>
 
 	<nav>
-		<ul data-template-triggers>
-			<li>View as:</li>
-			<li><a>One-pager</a></li>
-			<li><a>Extended</a></li>
-			<li><a>GeoCities</a></li>
+		<ul>
+			<li><a data-content-trigger="resume" data-active-trigger>R&eacute;sum&eacute;</a></li>
+			<li><a data-content-trigger="cv">CV</a></li>
+			<li><a data-style-trigger="business" data-active-trigger>Business</a></li>
+			<li><a data-style-trigger="geocities">GeoCities</a></li>
 		</ul>
 	</nav>
 
