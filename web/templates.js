@@ -12,9 +12,9 @@
 			const triggerValue = clickedElement.getAttribute(triggerAttribute)
 			document.querySelector('body').setAttribute(destinationAttribute, triggerValue)
 			for(let element of triggerElements){
-				element.removeAttribute('data-active-trigger')
+				element.classList.remove('active')
 			}
-			clickedElement.setAttribute('data-active-trigger', 1)
+			clickedElement.classList.add('active')
 		}
 	}
 
@@ -27,9 +27,11 @@
 		}
 
 		const urlHashValue = (location.hash || '#').substring(1)
-		const contentTriggerFromHash = document.querySelector(`[data-content-trigger=${urlHashValue}]`)
-		if(contentTriggerFromHash){
-			contentTriggerFromHash.click()
+		if(urlHashValue){
+			const contentTriggerFromHash = document.querySelector(`[data-content-trigger=${urlHashValue}]`)
+			if(contentTriggerFromHash){
+				contentTriggerFromHash.click()
+			}
 		}
 	})
 })();

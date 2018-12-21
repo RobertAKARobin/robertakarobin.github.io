@@ -239,15 +239,17 @@
 	</main>
 
 	<nav>
-		<ul>
-			<li><a data-content-trigger="resume" data-active-trigger>R&eacute;sum&eacute;</a></li>
-			<li><a data-content-trigger="cv">CV</a></li>
-			<li><a data-style-trigger="business" data-active-trigger>Business</a></li>
-			<li><a data-style-trigger="geocities">GeoCities</a></li>
-		</ul>
+		<div class="slider">
+			<a data-content-trigger class="active">R&eacute;sum&eacute;</a>
+			<a data-content-trigger="cv">CV</a>
+		</div>
+		<div class="slider">
+			<a data-style-trigger="business" class="active">Business</a>
+			<a data-style-trigger="geocities">GeoCities</a>
+		</div>
 	</nav>
 
-	<div data-prompt>
+	<div data-prompt class="lightbox">
 		<a data-prompt-text href="https://ineedaprompt.com"></a>
 	</div>
 

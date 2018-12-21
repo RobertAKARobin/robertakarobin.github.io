@@ -69,11 +69,67 @@ nav{
 		opacity:1;
 	}
 
-	ul{
-		margin:0 auto;
-		display:flex;
-		flex-direction:row;
-		justify-content:space-between;
+	display:flex;
+	flex-direction:row;
+
+	& > *{
+		flex-grow: 1;
+	}
+}
+.slider{
+	position:relative;
+	text-align:center;
+
+	& > a{
+		display:block;
+		position:relative;
+		float:left;
+		width:50%;
+		height:2em;
+		box-sizing:border-box;
+		text-decoration:none;
+		color:#444;
+
+		&:nth-of-type(1):after,
+		&:nth-of-type(2):before{
+			content:' ';
+
+			display:block;
+			position:absolute;
+			box-sizing:border-box;
+			top:0.25em;
+			height:1.5em;
+			border-radius:1.5em;
+		}
+
+		&:nth-of-type(1){
+			text-align:right;
+			padding-right:1.7em;
+			z-index:999;
+
+			&:after{
+				width:1.5em;
+				background-color:#fff;
+				border:3px solid $main-darkest;
+				transition:right 0.2s;
+			}
+			&:not(.active):after{
+				right:-1.5em;
+			}
+			&.active:after{
+				right:0;
+			}
+		}
+		&:nth-of-type(2){
+			text-align:left;
+			padding-left:1.7em;
+
+			&:before{
+				left:-1.5em;
+				width:3em;				
+				background-color:$main-darkest;
+			}
+		}
 	}
 }
 
@@ -188,9 +244,6 @@ $diag-icon-width:30px;
 		padding:1em;
 		margin-top:3em;
 	}
-	nav ul{
-		padding:0 1em;
-	}
 	section{
 		margin-bottom:4em;
 	}
@@ -220,12 +273,6 @@ $diag-icon-width:30px;
 		&:hover{
 			color:$compliment;
 		}
-		&[data-active-trigger]{
-			color:$compliment-darker;
-			&:hover{
-				color:$compliment;
-			}
-		}
 	}
 	.social svg{
 		fill:$main-darker;
@@ -238,7 +285,7 @@ $diag-icon-width:30px;
 	main{
 		width:850px;
 	}
-	nav ul{
+	nav{
 		width:850px;
 		margin:0 auto;
 	}
@@ -409,7 +456,7 @@ body[data-active-style=geocities]{
 		}
 	}
 }
-[data-prompt]{
+.lightbox{
 	position:fixed;
 	width:100vw;
 	height:100vh;
@@ -430,7 +477,7 @@ body[data-active-style=geocities]{
 
 	background-color:rgba(255,255,255,0.8);
 
-	[data-prompt-text]{
+	& > *{
 		display:block;
 		text-align:center;
 		max-width:600px;
