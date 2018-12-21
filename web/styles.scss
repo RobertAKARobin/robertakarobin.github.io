@@ -55,20 +55,22 @@ section{
 	position:relative;
 	margin-bottom:1em;
 }
-nav{
+.nav-wrap{
 	position:fixed;
 	bottom:0;
 	left:0;
 	width:100%;
 	border-top:1px solid rgba(0,0,0,0.1);
 	background-color:#fff;
+
 	opacity:0.9;
 	transition:0.1s opacity;
 
 	&:hover{
 		opacity:1;
 	}
-
+}
+nav{
 	display:flex;
 	flex-direction:row;
 
@@ -319,7 +321,7 @@ $diag-icon-width:30px;
 		font-size:14px;
 		line-height:1.6em;
 	}
-	nav{
+	.nav-wrap{
 		display:none;
 	}
 	main{
