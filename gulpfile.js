@@ -1,6 +1,7 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const concat = require('gulp-concat')
+const rename = require('gulp-rename')
 const replace = require('gulp-replace')
 const uglify = require('gulp-uglify-es').default
 const uglifyCSS = require('gulp-uglifycss')
@@ -9,10 +10,6 @@ const dateformat = require('dateformat')
 const del = require('del')
 const ENV = {}
 
-const loadEnv = function(done){
-	ENV.cachebuster = dateformat(new Date(), 'yymmddHHMMssl')
-	done()
-}
 const insertEnv = function(stream){
 	return replace(/\$([a-zA-Z0-9_-]+)\$/g, (nil, varname)=>{
 		return ENV[varname]
@@ -28,8 +25,10 @@ gulp.task('build-js', ()=>{
 		'./web/*.js'
 	])
 	.pipe(insertEnv())
+	.pipe(concat('main.js'))
+	.pipe(gulp.dest('./dist'))
 	.pipe(uglify())
-	.pipe(concat(`main-${ENV.cachebuster}.js`))
+	.pipe(rename(`main-${ENV.cachebuster}.min.js`))
 	.pipe(gulp.dest('./dist'))
 })
 
@@ -42,8 +41,10 @@ gulp.task('build-css', ()=>{
 		sourceMap: 'non'
 	}))
 	.pipe(insertEnv())
+	.pipe(concat('main.css'))
+	.pipe(gulp.dest('./dist'))
 	.pipe(uglifyCSS())
-	.pipe(concat(`main-${ENV.cachebuster}.css`))
+	.pipe(rename(`main-${ENV.cachebuster}.min.css`))
 	.pipe(gulp.dest('./dist'))
 })
 
@@ -60,7 +61,10 @@ gulp.task('build-html', ()=>{
 
 gulp.task('build', gulp.series([
 	'clean',
-	loadEnv,
+	function loadEnv(done){
+		ENV.cachebuster = dateformat(new Date(), 'yymmddHHMMssl')
+		done()
+	},
 	'build-js',
 	'build-css',
 	'build-html'
