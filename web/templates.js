@@ -21,5 +21,15 @@
 	document.addEventListener('DOMContentLoaded', ()=>{
 		setTriggers('data-content-trigger', 'data-active-content')
 		setTriggers('data-style-trigger', 'data-active-style')
+
+		for(let element of document.querySelectorAll('[data-content-trigger]')){
+			element.addEventListener('click', e=>location.hash = element.getAttribute('data-content-trigger'))
+		}
+
+		const urlHashValue = (location.hash || '#').substring(1)
+		const contentTriggerFromHash = document.querySelector(`[data-content-trigger=${urlHashValue}]`)
+		if(contentTriggerFromHash){
+			contentTriggerFromHash.click()
+		}
 	})
 })();
