@@ -55,6 +55,10 @@ section {
   margin-bottom: 1em;
 }
 
+section section {
+  page-break-inside: avoid;
+}
+
 .nav-wrap {
   position: fixed;
   bottom: 0;

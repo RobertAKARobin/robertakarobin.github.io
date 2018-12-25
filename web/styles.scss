@@ -54,6 +54,10 @@ main{
 section{
 	position:relative;
 	margin-bottom:1em;
+
+	section{
+		page-break-inside:avoid;
+	}
 }
 .nav-wrap{
 	position:fixed;
