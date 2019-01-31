@@ -337,21 +337,11 @@ $diag-icon-width:30px;
 }
 body[data-active-style=geocities]{
 	background-image:url(/img/star.jpg);
-	background-position:fixed;
+	background-attachment:fixed;
 	background-color:#000;
 	
 	&, main *{
 		cursor:url('/img/nyan.png'),progress !important;
-	}
-	&:before{
-		content:' ';
-		display:block;
-		position:absolute;
-		top:0;
-		right:0;
-		background-image:url(/img/lensflare.png);
-		width:300px;
-		height:300px;
 	}
 
 	nav{
@@ -459,6 +449,12 @@ body[data-active-style=geocities]{
 			width:14px;
 			height:14px;
 			vertical-align:middle;
+		}
+		& > section{
+			background-position:top right;
+			background-image:url(/img/lensflare.png);
+			background-repeat:no-repeat;
+			background-size:150px 150px;
 		}
 	}
 }

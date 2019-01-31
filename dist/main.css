@@ -337,23 +337,12 @@ em {
 
 body[data-active-style=geocities] {
   background-image: url(/img/star.jpg);
-  background-position: fixed;
+  background-attachment: fixed;
   background-color: #000;
 }
 
 body[data-active-style=geocities], body[data-active-style=geocities] main * {
   cursor: url("/img/nyan.png"), progress !important;
-}
-
-body[data-active-style=geocities]:before {
-  content: ' ';
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-image: url(/img/lensflare.png);
-  width: 300px;
-  height: 300px;
 }
 
 body[data-active-style=geocities] nav {
@@ -467,6 +456,13 @@ body[data-active-style=geocities] main li:before {
   width: 14px;
   height: 14px;
   vertical-align: middle;
+}
+
+body[data-active-style=geocities] main > section {
+  background-position: top right;
+  background-image: url(/img/lensflare.png);
+  background-repeat: no-repeat;
+  background-size: 150px 150px;
 }
 
 .lightbox {
