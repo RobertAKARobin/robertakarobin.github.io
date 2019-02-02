@@ -199,6 +199,10 @@ em {
   font-style: italic;
 }
 
+.prose p {
+  margin: 1em 0;
+}
+
 .social a {
   text-decoration: none;
 }
