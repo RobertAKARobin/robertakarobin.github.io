@@ -18,8 +18,8 @@
 
 :root {
   font-family: "Georgia", serif;
-  font-size: 15px;
-  line-height: 1.8em;
+  font-size: 16px;
+  line-height: 1.9em;
 }
 
 :root, body {
@@ -48,15 +48,6 @@ main {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-}
-
-section {
-  position: relative;
-  margin-bottom: 1em;
-}
-
-section section {
-  page-break-inside: avoid;
 }
 
 .nav-wrap {
@@ -174,22 +165,12 @@ h1 sub {
 h2 {
   font-weight: bold;
   border-top: 1px solid #ccc;
-  padding-top: 1em;
   text-align: center;
 }
 
 h3 a {
   font-weight: bold;
   text-decoration: underline;
-}
-
-h3 span {
-  display: block;
-  font-style: italic;
-}
-
-h3 span:first-letter {
-  text-transform: uppercase;
 }
 
 h3 + p {
@@ -267,16 +248,16 @@ em {
   section {
     margin-bottom: 4em;
   }
-  h2 {
-    padding-top: 3em;
-    padding-bottom: 1em;
-  }
   header, aside {
     text-align: center;
   }
   h1 {
     text-transform: uppercase;
     color: #FF9500;
+  }
+  h2 {
+    padding-top: 3em;
+    padding-bottom: 1em;
   }
   a {
     color: #19A5FF;
@@ -293,6 +274,16 @@ em {
   }
 }
 
+@media screen and (max-width: 899px) {
+  h3 span {
+    display: block;
+    font-style: italic;
+  }
+  h3 span:first-letter {
+    text-transform: uppercase;
+  }
+}
+
 @media screen and (min-width: 900px) {
   main {
     width: 850px;
@@ -304,10 +295,6 @@ em {
 }
 
 @media print, screen and (min-width: 900px) {
-  :root {
-    font-size: 16px;
-    line-height: 1.9em;
-  }
   h3 span {
     display: inline;
     font-style: normal;
@@ -318,7 +305,10 @@ em {
   header {
     text-align: left;
   }
-  aside {
+  section {
+    position: relative;
+  }
+  section aside {
     position: absolute;
     top: 0;
     right: 0;
@@ -335,8 +325,14 @@ em {
   .nav-wrap {
     display: none;
   }
-  main {
-    padding: 0;
+  h2 {
+    padding-top: 1em;
+  }
+  section {
+    margin-bottom: 1em;
+  }
+  section section {
+    page-break-inside: avoid;
   }
   section:last-of-type {
     margin-bottom: 0;

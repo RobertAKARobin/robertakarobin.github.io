@@ -26,8 +26,8 @@ $compliment-darker:#B26900;
 
 :root{
 	font-family:"Georgia", serif;
-	font-size:15px;
-	line-height:1.8em;
+	font-size:16px;
+	line-height:1.9em;
 }
 :root, body{
 	width:100vw;
@@ -50,14 +50,6 @@ main{
 	position:relative;
 	margin-left:auto;
 	margin-right:auto;
-}
-section{
-	position:relative;
-	margin-bottom:1em;
-
-	section{
-		page-break-inside:avoid;
-	}
 }
 .nav-wrap{
 	position:fixed;
@@ -171,20 +163,12 @@ h1{
 h2{
 	font-weight:bold;
 	border-top:1px solid #ccc;
-	padding-top:1em;
 	text-align:center;
 }
 h3{
 	a{
 		font-weight:bold;
 		text-decoration:underline;
-	}
-	span{
-		display:block;
-		font-style:italic;
-		&:first-letter{
-			text-transform:uppercase;
-		}
 	}
 	& + p{
 		font-weight:bold;
@@ -263,16 +247,16 @@ $diag-icon-width:30px;
 	section{
 		margin-bottom:4em;
 	}
-	h2{
-		padding-top:3em;
-		padding-bottom:1em;
-	}
 	header, aside{
 		text-align:center;
 	}
 	h1{
 		text-transform:uppercase;
 		color:$compliment;
+	}
+	h2{
+		padding-top:3em;
+		padding-bottom:1em;
 	}
 	a{
 		color:$main;
@@ -289,6 +273,17 @@ $diag-icon-width:30px;
 		}
 	}
 }
+@media screen and (max-width: 899px){
+	h3{
+		span{
+			display:block;
+			font-style:italic;
+			&:first-letter{
+				text-transform:uppercase;
+			}
+		}
+	}
+}
 @media screen and (min-width: 900px){
 	main{
 		width:850px;
@@ -299,10 +294,6 @@ $diag-icon-width:30px;
 	}
 }
 @media print, screen and (min-width: 900px){
-	:root{
-		font-size:16px;
-		line-height:1.9em;
-	}
 	h3{
 		span{
 			display:inline;
@@ -315,11 +306,15 @@ $diag-icon-width:30px;
 	header{
 		text-align:left;
 	}
-	aside{
-		position:absolute;
-		top:0;
-		right:0;
-		text-align:right;
+	section{
+		position:relative;
+		
+		aside{
+			position:absolute;
+			top:0;
+			right:0;
+			text-align:right;
+		}
 	}
 }
 @media print{
@@ -331,11 +326,19 @@ $diag-icon-width:30px;
 	.nav-wrap{
 		display:none;
 	}
-	main{
-		padding: 0;
+	h2{
+		padding-top:1em;
 	}
-	section:last-of-type{
-		margin-bottom:0;
+	section{
+		margin-bottom:1em;
+
+		section{
+			page-break-inside:avoid;
+		}
+
+		&:last-of-type{
+			margin-bottom:0;
+		}
 	}
 }
 body[data-active-style=geocities]{
