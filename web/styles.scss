@@ -322,8 +322,8 @@ $diag-icon-width:30px;
 @media print{
 	:root{
 		color:#000;
-		font-size:14px;
-		line-height:1.6em;
+		font-size:12px;
+		line-height:1.8em;
 	}
 	.nav-wrap{
 		display:none;
@@ -332,7 +332,7 @@ $diag-icon-width:30px;
 		padding-top:1em;
 	}
 	section{
-		margin-bottom:1em;
+		margin-bottom:1.6em;
 
 		section{
 			page-break-inside:avoid;
