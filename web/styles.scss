@@ -156,18 +156,16 @@ main li{
 	}
 }
 
-h1, h2, h3{
-	sub{
-		font-weight:normal;
-		vertical-align:baseline;
-	}
-}
 h1{
 	font-weight:bold;
 	text-decoration:underline;
 
 	& + p{
 		font-weight:bold;
+	}
+	sub{
+		font-weight:normal;
+		vertical-align:baseline;
 	}
 }
 h2{
@@ -180,6 +178,13 @@ h3{
 	a{
 		font-weight:bold;
 		text-decoration:underline;
+	}
+	span{
+		display:block;
+		font-style:italic;
+		&:first-letter{
+			text-transform:uppercase;
+		}
 	}
 	& + p{
 		font-weight:bold;
@@ -262,14 +267,6 @@ $diag-icon-width:30px;
 		padding-top:3em;
 		padding-bottom:1em;
 	}
-	h3{
-		&, & span{
-			font-style:italic;
-		}
-		& span{
-			display:block;
-		}
-	}
 	header, aside{
 		text-align:center;
 	}
@@ -306,6 +303,15 @@ $diag-icon-width:30px;
 		font-size:16px;
 		line-height:1.9em;
 	}
+	h3{
+		span{
+			display:inline;
+			font-style:normal;
+			&:before{
+				content:', ';
+			}
+		}
+	}
 	header{
 		text-align:left;
 	}
@@ -314,14 +320,6 @@ $diag-icon-width:30px;
 		top:0;
 		right:0;
 		text-align:right;
-	}
-	h3{
-		&, & span{
-			font-style:normal;
-		}
-		& span{
-			display:inline;
-		}
 	}
 }
 @media print{

@@ -157,11 +157,6 @@ main li li:before {
   content: "-";
 }
 
-h1 sub, h2 sub, h3 sub {
-  font-weight: normal;
-  vertical-align: baseline;
-}
-
 h1 {
   font-weight: bold;
   text-decoration: underline;
@@ -169,6 +164,11 @@ h1 {
 
 h1 + p {
   font-weight: bold;
+}
+
+h1 sub {
+  font-weight: normal;
+  vertical-align: baseline;
 }
 
 h2 {
@@ -181,6 +181,15 @@ h2 {
 h3 a {
   font-weight: bold;
   text-decoration: underline;
+}
+
+h3 span {
+  display: block;
+  font-style: italic;
+}
+
+h3 span:first-letter {
+  text-transform: uppercase;
 }
 
 h3 + p {
@@ -262,12 +271,6 @@ em {
     padding-top: 3em;
     padding-bottom: 1em;
   }
-  h3, h3 span {
-    font-style: italic;
-  }
-  h3 span {
-    display: block;
-  }
   header, aside {
     text-align: center;
   }
@@ -305,6 +308,13 @@ em {
     font-size: 16px;
     line-height: 1.9em;
   }
+  h3 span {
+    display: inline;
+    font-style: normal;
+  }
+  h3 span:before {
+    content: ', ';
+  }
   header {
     text-align: left;
   }
@@ -313,12 +323,6 @@ em {
     top: 0;
     right: 0;
     text-align: right;
-  }
-  h3, h3 span {
-    font-style: normal;
-  }
-  h3 span {
-    display: inline;
   }
 }
 
