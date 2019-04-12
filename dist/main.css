@@ -408,12 +408,13 @@ em {
 }
 
 .social a {
+  font-size: 0;
   text-decoration: none;
 }
 
 .social svg {
-  height: 1.6em;
-  vertical-align: bottom;
+  height: 1.6rem;
+  vertical-align: top;
   fill: #000;
 }
 
@@ -489,6 +490,12 @@ em {
 }
 
 @media screen and (max-width: 899px) {
+  h3 {
+    font-size: 0;
+  }
+  h3 > * {
+    font-size: 1rem;
+  }
   h3 span {
     display: block;
     font-style: italic;
@@ -512,9 +519,6 @@ em {
   h3 span {
     display: inline;
     font-style: normal;
-  }
-  h3 span:before {
-    content: ', ';
   }
   header {
     text-align: left;
