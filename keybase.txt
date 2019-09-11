@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/robertakarobin
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.robertakarobin.com
+  * I am robertakarobin (https://keybase.io/robertakarobin) on keybase.
+  * I have a public key ASDVGB3oarwzNAiR4gJOPtpZKybBmyC4UUfVJ_Tn8hT9owo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120d5181de86abc33340891e2024e3eda592b26c19b20b85147d527f4e7f214fda30a",
+      "host": "keybase.io",
+      "kid": "0120d5181de86abc33340891e2024e3eda592b26c19b20b85147d527f4e7f214fda30a",
+      "uid": "dfabc98b9c6c73960f293760065a0919",
+      "username": "robertakarobin"
+    },
+    "merkle_root": {
+      "ctime": 1568232936,
+      "hash": "060820e72557f6b147cfff17b94de11027c202e1beee4693b1809602d8790d503f1b49f1ca2074b6daf37689a63e97635b835838aad63972f0325c39a8155ae3",
+      "hash_meta": "1d268816ad36de57821529c3412c3c53a11ebcdd68e155af70090588e9d992e1",
+      "seqno": 6807804
+    },
+    "service": {
+      "entropy": "yoqmdR/duokjbXyMHjTQCRTy",
+      "hostname": "www.robertakarobin.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.4.1"
+  },
+  "ctime": 1568232943,
+  "expire_in": 504576000,
+  "prev": "f16626d7397ceadd9398d2aa5c4f5270f1e81d63346fe8c05a461d65a61130e5",
+  "seqno": 38,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg1Rgd6Gq8MzQIkeICTj7aWSsmwZsguFFH1Sf05/IU/aMKp3BheWxvYWTESpcCJsQg8WYm1zl86t2TmNKqXE9ScPHoHWM0b+jAWkYdZaYRMOXEIMarjXYpdSkZEeyiwWw2tw5iCCobdJ0nKTO7+NYT4b5BAgHCo3NpZ8RA0da1cJ1EIzZiNMSwTY8OXQ/Pv8jwiPnp8STPkw+25DAsoglQi/Ye+OLkFENTw7ksZvhV9TD8Uimh98t+/gNcDqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIEYUJdt6LwgoTur3e7lZxFqtNamidlZjaTl/eSJ7emeJo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/robertakarobin
+
+==================================================================
