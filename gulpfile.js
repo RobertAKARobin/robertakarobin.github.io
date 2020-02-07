@@ -26,6 +26,7 @@ gulp.task('build-js', ()=>{
 	])
 	.pipe(insertEnv())
 	.pipe(concat('main.js'))
+	.pipe(rename(`main-${ENV.cachebuster}.js`))
 	.pipe(gulp.dest('./dist'))
 	.pipe(uglify())
 	.pipe(rename(`main-${ENV.cachebuster}.min.js`))
@@ -42,6 +43,7 @@ gulp.task('build-css', ()=>{
 	}))
 	.pipe(insertEnv())
 	.pipe(concat('main.css'))
+	.pipe(rename(`main-${ENV.cachebuster}.css`))
 	.pipe(gulp.dest('./dist'))
 	.pipe(uglifyCSS())
 	.pipe(rename(`main-${ENV.cachebuster}.min.css`))
@@ -53,9 +55,9 @@ gulp.task('build-html', ()=>{
 		'./web/index.html'
 	])
 	.pipe(insertEnv())
-	.pipe(htmlmin({
-		collapseWhitespace: true
-	}))
+	// .pipe(htmlmin({
+	// 	collapseWhitespace: true
+	// }))
 	.pipe(gulp.dest('.'))
 })
 
