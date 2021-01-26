@@ -403,6 +403,10 @@ em {
   font-style: italic;
 }
 
+dfn {
+  font-style: italic;
+}
+
 .prose p {
   margin: 1em 0;
 }
