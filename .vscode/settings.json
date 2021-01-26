@@ -1,0 +1,18 @@
+{
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "files.insertFinalNewline": true,
+  "[html]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2,
+  },
+  "[scss]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+  },
+  "[javascript]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 2,
+  }
+}

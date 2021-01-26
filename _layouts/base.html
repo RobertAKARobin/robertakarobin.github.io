@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Robert (aka Robin) Thomas</title>
+		<link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+		<link href="/assets/styles.css" rel="stylesheet" />
+		<script defer src="/assets/scripts.js"></script>
+	</head>
+	<body data-active-content="resume" data-active-style="business">
+		<main>
+			{{ content }}
+		</main>
+		
+		<div class="nav-wrap">
+			<nav>
+				<div class="slider">
+					<a data-content-trigger="resume" class="active">R&eacute;sum&eacute;</a>
+					<a data-content-trigger="cv">CV</a>
+				</div>
+				<div class="slider">
+					<a data-style-trigger="business" class="active">Business</a>
+					<a data-style-trigger="geocities">GeoCities</a>
+				</div>
+			</nav>
+		</div>
+		
+		<a class="github-link" href="https://github.com/robertakarobin/robertakarobin.github.io">
+			<svg role="img" viewBox="0 0 100 100">
+				<title>GitHub</title>
+				<path d="M60.525 90H39.203s.03-6.326 0-10.667c-14.595 3.14-18.667-8-18.667-8-2.667-5.333-5.333-8-5.333-8-5.333-3.166 0-2.667 0-2.667 5.333 0 8 5.333 8 5.333 4.68 7.948 13.008 6.669 16 5.333 0-2.666 1.168-6.698 2.667-8-11.647-1.312-21.344-8-21.344-21.333s2.677-16 5.344-18.667c-.54-1.313-2.771-6.172.083-13.332 0 0 5.24 0 10.573 8 2.643-2.644 10.667-2.667 13.336-2.667 2.664 0 10.687.023 13.331 2.667 5.333-8 10.583-8 10.583-8 2.854 7.16.622 12.019.083 13.333C76.526 26 79.192 28.667 79.192 42s-9.685 20.021-21.333 21.333c1.5 1.302 2.667 5.894 2.667 8V90z" />
+			</svg>
+		</a>
+		
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-43947949-3"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			
+			gtag('config', 'UA-43947949-3');
+		</script>
+		
+	</body>
+</html>

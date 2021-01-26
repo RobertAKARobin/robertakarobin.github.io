@@ -1,0 +1,10 @@
+title: RobertAKARobin
+email: contact@robertakarobin.com
+baseurl: ""
+
+sass:
+  sass_dir: _sass
+  style: expanded
+
+kramdown:
+  auto_ids: false
