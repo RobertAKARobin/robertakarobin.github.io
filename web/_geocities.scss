@@ -120,10 +120,10 @@ body[data-active-style=geocities]{
 			}
 		}
 		header{
+			display:block;
 			text-align:center;
 		}
-		aside{
-			position:relative;
+		header > * {
 			text-align:center;
 		}
 		li:before{

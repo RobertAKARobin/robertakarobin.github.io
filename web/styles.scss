@@ -9,6 +9,8 @@ $main-darkest:#006CB2;
 $compliment:#FF9500;
 $compliment-darker:#B26900;
 
+$screen-width: 1000px;
+
 *{
 	margin:0;
 	border:0;
@@ -253,7 +255,7 @@ $diag-icon-width:30px;
 	section{
 		margin-bottom:4em;
 	}
-	header, aside{
+	header {
 		text-align:center;
 	}
 	h1{
@@ -279,7 +281,7 @@ $diag-icon-width:30px;
 		}
 	}
 }
-@media screen and (max-width: 899px){
+@media screen and (max-width: #{$screen-width - 1}){
 	h3{
 		font-size:0;
 		& > *{
@@ -294,16 +296,16 @@ $diag-icon-width:30px;
 		}
 	}
 }
-@media screen and (min-width: 900px){
+@media screen and (min-width: #{$screen-width}){
 	main{
-		width:850px;
+		max-width:$screen-width;
 	}
 	nav{
-		width:850px;
+		max-width:$screen-width;
 		margin:0 auto;
 	}
 }
-@media print, screen and (min-width: 900px){
+@media print, screen and (min-width: #{$screen-width}){
 	h3{
 		span{
 			display:inline;
@@ -311,17 +313,14 @@ $diag-icon-width:30px;
 		}
 	}
 	header{
+		display: flex;
+	}
+	header > :first-child{
+		flex-grow:1;
 		text-align:left;
 	}
-	section{
-		position:relative;
-		
-		aside{
-			position:absolute;
-			top:0;
-			right:0;
-			text-align:right;
-		}
+	header > :last-child {
+		text-align:right;
 	}
 }
 @media print{

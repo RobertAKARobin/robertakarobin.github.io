@@ -130,11 +130,11 @@ body[data-active-style=geocities] main h3 span:before {
 }
 
 body[data-active-style=geocities] main header {
+  display: block;
   text-align: center;
 }
 
-body[data-active-style=geocities] main aside {
-  position: relative;
+body[data-active-style=geocities] main header > * {
   text-align: center;
 }
 
@@ -467,7 +467,7 @@ dfn {
   section {
     margin-bottom: 4em;
   }
-  header, aside {
+  header {
     text-align: center;
   }
   h1 {
@@ -493,7 +493,7 @@ dfn {
   }
 }
 
-@media screen and (max-width: 899px) {
+@media screen and (max-width: 999px) {
   h3 {
     font-size: 0;
   }
@@ -509,31 +509,29 @@ dfn {
   }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1000px) {
   main {
-    width: 850px;
+    max-width: 1000px;
   }
   nav {
-    width: 850px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 }
 
-@media print, screen and (min-width: 900px) {
+@media print, screen and (min-width: 1000px) {
   h3 span {
     display: inline;
     font-style: normal;
   }
   header {
+    display: flex;
+  }
+  header > :first-child {
+    flex-grow: 1;
     text-align: left;
   }
-  section {
-    position: relative;
-  }
-  section aside {
-    position: absolute;
-    top: 0;
-    right: 0;
+  header > :last-child {
     text-align: right;
   }
 }
