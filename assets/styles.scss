@@ -7,8 +7,8 @@
 $data-content-names: resume cv;
 $data-style-names: business geocities;
 
-$main:#19A5FF;
-$main-darker:#009BFF;
+$main:#006CB2;
+$main-darker:#006CB2;
 $main-darkest:#006CB2;
 $compliment:#FF9500;
 $compliment-darker:#B26900;
@@ -67,10 +67,10 @@ main{
   width:100%;
   border-top:1px solid rgba(0,0,0,0.1);
   background-color:#fff;
-  
+
   opacity:0.9;
   transition:0.1s opacity;
-  
+
   &:hover{
     opacity:1;
   }
@@ -78,7 +78,7 @@ main{
 nav{
   display:flex;
   flex-direction:row;
-  
+
   & > *{
     flex-grow: 1;
   }
@@ -86,7 +86,7 @@ nav{
 .slider{
   position:relative;
   text-align:center;
-  
+
   & > a{
     display:block;
     position:relative;
@@ -96,11 +96,11 @@ nav{
     box-sizing:border-box;
     text-decoration:none;
     color:#444;
-    
+
     &:nth-of-type(1):after,
     &:nth-of-type(2):before{
       content:' ';
-      
+
       display:block;
       position:absolute;
       box-sizing:border-box;
@@ -108,12 +108,12 @@ nav{
       height:1.5em;
       border-radius:1.5em;
     }
-    
+
     &:nth-of-type(1){
       text-align:right;
       padding-right:1.7em;
       z-index:999;
-      
+
       &:after{
         width:1.5em;
         background-color:#fff;
@@ -130,10 +130,10 @@ nav{
     &:nth-of-type(2){
       text-align:left;
       padding-left:1.7em;
-      
+
       &:before{
         left:-1.5em;
-        width:3em;				
+        width:3em;
         background-color:$main-darkest;
       }
     }
@@ -143,7 +143,7 @@ nav{
 main li{
   position:relative;
   padding-left:1em;
-  
+
   &:before{
     display:inline-block;
     position:absolute;
@@ -161,7 +161,7 @@ h1{
   color:$main-darkest;
   font-weight:bold;
   text-decoration:underline;
-  
+
   & + p{
     font-weight:bold;
   }
@@ -216,7 +216,7 @@ dfn{
   svg{
     height:1.6rem;
     vertical-align:top;
-    fill:$main-darker;
+    fill:$main-darkest;
 
     &:hover{
       fill:$compliment;
@@ -230,14 +230,14 @@ $diag-icon-width:30px;
   display:block;
   position:fixed;
   z-index:999;
-  
+
   top:0;
   right:-($diag-width/2);
   width:$diag-width;
   height:$diag-height;
   transform:rotateZ(45deg);
   transform-origin:100px 0px;
-  
+
   background-color:$main;
   opacity:0.5;
   &:hover{
@@ -248,7 +248,7 @@ $diag-icon-width:30px;
       display:none;
     }
   }
-  
+
   svg{
     display:block;
     margin-left: auto;
@@ -338,11 +338,11 @@ $diag-icon-width:30px;
   }
   section{
     margin-bottom:1.6em;
-    
+
     section{
       page-break-inside:avoid;
     }
-    
+
     &:last-of-type{
       margin-bottom:0;
     }
@@ -356,7 +356,7 @@ $diag-icon-width:30px;
   top:0;
   left:0;
   z-index:100;
-  
+
   &.active{
     display:flex;
   }
@@ -366,9 +366,9 @@ $diag-icon-width:30px;
   flex-direction:column;
   justify-content:center;
   align-items:center;
-  
+
   background-color:rgba(255,255,255,0.8);
-  
+
   & > *{
     display:block;
     text-align:center;
