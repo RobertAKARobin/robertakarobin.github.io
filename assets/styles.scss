@@ -216,11 +216,6 @@ dfn{
   svg{
     height:1.6rem;
     vertical-align:top;
-    fill:$main-darkest;
-
-    &:hover{
-      fill:$compliment;
-    }
   }
 }
 $diag-width:200px;
@@ -281,6 +276,15 @@ $diag-icon-width:30px;
   a{
     text-decoration:underline;
   }
+  .social{
+    svg{
+      fill:$main-darkest;
+
+      &:hover{
+        fill:$compliment;
+      }
+    }
+  }
 }
 @media screen and (max-width: #{$screen-width - 1}){
   h3{
@@ -333,8 +337,14 @@ $diag-icon-width:30px;
   .nav-wrap{
     display:none;
   }
+  h1 {
+    color: #000;
+  }
   h2{
     padding-top:1em;
+  }
+  a{
+    color:#000;
   }
   section{
     margin-bottom:1.6em;
