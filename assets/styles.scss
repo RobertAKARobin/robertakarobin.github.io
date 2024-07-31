@@ -155,6 +155,26 @@ main li{
       content:"-";
     }
   }
+
+  h3 {
+    display: inline;
+    font-weight: normal;
+    font-size: inherit;
+
+    &:after {
+      content: ': ';
+      font-size: inherit;
+    }
+
+    a {
+      display: inline;
+      font-weight: inherit;
+
+      @media print {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 h1{
