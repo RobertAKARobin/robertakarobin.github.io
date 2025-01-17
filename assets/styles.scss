@@ -223,6 +223,29 @@ dfn{
   font-style:italic;
 }
 
+table.opensource {
+  text-align: left;
+  white-space: nowrap;
+
+  & tr {
+    & > :not(:first-child) {
+      padding-left: 1ex;
+    }
+
+    & > :not(:last-child) {
+      padding-right: 1ex;
+    }
+
+    & > th {
+      font-weight: bold;
+    }
+
+    & > :nth-child(4) {
+      display: none;
+    }
+  }
+}
+
 .prose{
   p{
     margin:1em 0;
