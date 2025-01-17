@@ -224,6 +224,7 @@ dfn{
 }
 
 table.opensource {
+  margin-top: 1em;
   text-align: left;
   white-space: nowrap;
 
@@ -238,10 +239,6 @@ table.opensource {
 
     & > th {
       font-weight: bold;
-    }
-
-    & > :nth-child(4) {
-      display: none;
     }
   }
 }
