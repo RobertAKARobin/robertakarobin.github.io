@@ -7,9 +7,9 @@
 $data-content-names: resume cv;
 $data-style-names: business geocities;
 
-$main:#006CB2;
-$main-darker:#006CB2;
-$main-darkest:#006CB2;
+$main:#005599;
+$main-darker:#005599;
+$main-darkest:#005599;
 $compliment:#FF9500;
 $compliment-darker:#B26900;
 
@@ -377,14 +377,16 @@ $diag-icon-width:30px;
   .nav-wrap{
     display:none;
   }
-  h1 {
-    color: #000;
+  h1,
+  h3 a,
+  th {
+    color: $main;
   }
   h2{
     padding-top:1em;
   }
-  a{
-    color:#000;
+  a {
+    color: inherit;
   }
   section{
     margin-bottom:1.6em;
